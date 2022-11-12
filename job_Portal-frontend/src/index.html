@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Comfy Jobs</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
     <style>
         #nav{
             position: relative;
@@ -11,6 +13,9 @@
             width: 100vw;
             border: 2px solid white;
             background-color: #ffcccc;
+        }
+        #img{
+            height: 10vh;
         }
         #navbtn_div{
             position: absolute;
@@ -34,24 +39,49 @@
             color: white;
             font-size: 1.2rem;
         }
-        #dashboard{
-            display: flex;
+        #content{
+            position: absolute;
+            width: 100vw;
+            height: 89vh;
+            background-color: #fff3db;
+        }
+        #img_2{
+            position: relative;
+            left: 85vh;
+            height: 50vh;
+        }
+        #hometxt{
+            position: relative;
+            top: 12rem;
+            font-size: 30px;
+            margin-left: 10rem;
         }
     </style>
 </head>
 <body>
 <section id="dashboard">
     <div id="nav">
-        <img height="100vh" src="assets/logo.png" alt="">
+        <div>
+            <img id="img" src="assets/logo.png" alt="">
+        </div>
+
         <div id="navbtn_div">
             <button id="navbtn_1">LOGIN</button>
             <button id="navbtn_2">SIGN UP</button>
         </div>
     </div>
     <div id="content">
-
+            <div id="hometxt">
+                <h1><i>WELCOME TO COMFY JOBS.</i></h1><br>
+                <h2>we provide you the </h2>
+                <h2>best secure services.</h2>
+            </div>
+        <div>
+            <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
+        </div>
     </div>
 
 </section>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
