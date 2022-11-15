@@ -7,10 +7,14 @@
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
     <style>
+        /*Dashboard*/
+        #dashboard{
+            height: 99vh;
+        }
         #nav{
             position: relative;
             height: 10vh;
-            width: 100vw;
+            width: 97vw;
             border: 2px solid white;
             background-color: #ffcccc;
         }
@@ -41,8 +45,8 @@
         }
         #content{
             position: absolute;
-            width: 100vw;
             height: 89vh;
+            width: 97vw;
             background-color: #fff3db;
         }
         #img_2{
@@ -56,11 +60,112 @@
             font-size: 30px;
             margin-left: 10rem;
         }
+        /*login*/
+        .button {
+            background-color: #1D1A53;
+            width: 150px;
+            font-size: 20px;
+            color: white;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+            align : center;
+            position: relative;
+            top: 10rem;
+            left: 14rem;
+            border-radius: 20px;
+        }
+        form {
+            background-color: #f8c291;
+            width: 40vw;
+            height: 50vh;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        .button:hover {
+            opacity: 0.7;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            background-color: #F8EFBA;
+            height: 99vh;
+            width: 87vw;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar{
+            position: relative;
+            height: 10vh;
+            width: 97vw;
+            left: 2vh;
+            border: 2px solid white;
+            background-color: #ffcccc;
+        }
+        .logo{
+            height: 10vh;
+        }
+        .nav_text{
+            position: absolute;
+            color: black;
+            bottom: 1vh;
+            left: 45rem;
+            font-family: Algerian;
+            font-size: 35px;
+        }
+        .text_cover{
+            position: relative;
+            top: 12vh;
+            left: 5vh;
+            width: 50vw;
+        }
+        .newAcc{
+            position: relative;
+            left: 1.5rem;
+            width: 97vw;
+            height: 99vh;
+            background: rgba(183, 132, 55, 0.15);
+        }
+        .col1{
+            position: relative;
+
+        }
+        .btncreate{
+            position: absolute;
+            bottom: 3rem;
+            right: 40rem;
+            border-radius: 15px;
+            font-size: 25px;
+        }
+        /*#navbtn_3{
+            background-color: #273c75;
+            height: 6vh;
+            width: 15vh;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        #navbtn_4{
+            background-color: #273c75;
+            height: 6vh;
+            width: 15vh;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }*/
     </style>
 </head>
 <body>
-<section id="dashboard">
-    <div id="nav">
+<section id="dashboard" class="container-fluid">
+    <section id="nav">
         <div>
             <img id="img" src="assets/logo.png" alt="">
         </div>
@@ -69,7 +174,7 @@
             <button id="navbtn_1">LOGIN</button>
             <button id="navbtn_2">SIGN UP</button>
         </div>
-    </div>
+    </section>
     <div id="content">
             <div id="hometxt">
                 <h1><i>WELCOME TO COMFY JOBS.</i></h1><br>
@@ -79,9 +184,149 @@
         <div>
             <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
         </div>
+        <!--<div>
+            <button id="navbtn_3">LOGIN</button>
+            <button id="navbtn_4">SIGN UP</button>
+        </div>-->
     </div>
-
 </section>
+<nav class="navbar">
+    <div>
+        <img class="logo" style="margin-top: -0.5rem;" src="assets/logo.png" alt="">
+    </div>
+    <div class="navbar_text">
+        <h2 class="nav_text">Make Your Own Money</h2>
+    </div>
+</nav>
+<section id="login" class="container-fluid container">
+    <form id="loginform">
+        <div class="text_cover">
+            <label class="form-label" style="font-size: 1.5rem;" for="txtloginUserid">User Name  </label>
+            <input class="form-control w-50" style="margin-left: 2rem" id="txtloginUserid" placeholder="User Name" type="text">
+        </div>
+        <div class="text_cover">
+            <label class="form-label" style="font-size: 1.5rem;" for="txtloginPassword">Password  </label>
+            <input class="form-control w-50" style="margin-left: 3rem;" id="txtloginPassword" placeholder="Password" type="password">
+        </div>
+        <div >
+            <button type="button" class="button">Log In</button>
+        </div>
+    </form>
+</section>
+<!--Student New Acc-->
+<section class="newAcc row">
+    <nav class="navbar row">
+        <div>
+            <img class="logo" style="margin-top: -0.5rem;margin-left: -2rem;" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbar_text">
+            <h2 class="nav_text">Make Your Own Money</h2>
+        </div>
+    </nav>
+    <div class="col-6 pt-5 ml-1 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtname">NAME :</label>
+            <input class="form-control w-50" id="txtname" placeholder="Name" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtnic">NIC :</label>
+            <input class="form-control w-50" id="txtnic" placeholder="Nic" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtdob">DATE OF BIRTH :</label>
+            <input class="form-control w-50" id="txtdob" placeholder="Date of Birth" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtemail">EMAIL :</label>
+            <input class="form-control w-50" id="txtemail" placeholder="Email" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtcontact">CONTACT :</label>
+            <input class="form-control w-50" id="txtcontact" placeholder="Contact" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtunivercity">UNIVERCITY :</label>
+            <input class="form-control w-50" id="txtunivercity" placeholder="Univercity" type="text">
+        </div>
+    </div>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtgender">GENDER :</label>
+            <input class="form-control w-50" id="txtgender" placeholder="Gender" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtlocation">LOCATION :</label>
+            <input class="form-control w-50" id="txtlocation" placeholder="Location" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtskills">SKILLS : </label>
+            <input class="form-control  w-50" style="height: 10rem" id="txtskills" placeholder="Skills" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtpassword">PASSWORD : </label>
+            <input class="form-control w-50" id="txtpassword" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btncreate" type="button" class="btn btn-primary btncreate" >CREATE MY ACCOUNT</button>
+        </div>
+    </div>
+</section>
+<!--Employee new App-->
+<section class="newAcc row">
+    <nav class="navbar row">
+        <div>
+            <img class="logo" style="margin-top: -0.5rem;margin-left: -2rem;" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbar_text">
+            <h2 class="nav_text">Make Your Own Money</h2>
+        </div>
+    </nav>
+    <div class="col-6 pt-5 ml-1 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtempname">NAME :</label>
+            <input class="form-control w-50" id="txtempname" placeholder="Name" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempnic">NIC :</label>
+            <input class="form-control w-50" id="txtempnic" placeholder="Nic" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempcompany">COMPANY NAME :</label>
+            <input class="form-control w-50" id="txtempcompany" placeholder="Company Name" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempcontact">CONTACT :</label>
+            <input class="form-control w-50" id="txtempcontact" placeholder="Contact" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempaddress">ADDRESS :</label>
+            <input class="form-control w-50" id="txtempaddress" placeholder="Address" type="text">
+        </div>
+    </div>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtemppassion">PASSION :</label>
+            <input class="form-control w-50" id="txtemppassion" placeholder="Passion" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempemail">E-MAIL :</label>
+            <input class="form-control w-50" id="txtempemail" placeholder="E mail" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempgender">GENDER : </label>
+            <input class="form-control  w-50" id="txtempgender" placeholder="Gender" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtemppassword">PASSWORD : </label>
+            <input class="form-control w-50" id="txtemppassword" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btncreatenewemployee" type="button" class="btn btn-primary btncreate" >CREATE MY ACCOUNT</button>
+        </div>
+    </div>
+</section>
+
+
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
