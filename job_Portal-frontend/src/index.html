@@ -11,22 +11,22 @@
         #dashboard{
             height: 99vh;
         }
-        #nav{
+        .nav{
             position: relative;
             height: 10vh;
             width: 97vw;
             border: 2px solid white;
             background-color: #ffcccc;
         }
-        #img{
+        .img{
             height: 10vh;
         }
-        #navbtn_div{
+        .navbtn_div{
             position: absolute;
             left: 100vh;
             bottom: 2vh;
         }
-        #navbtn_1{
+        .navbtn_1{
             background-color: #273c75;
             height: 6vh;
             width: 15vh;
@@ -35,7 +35,7 @@
             color: white;
             font-size: 1.2rem;
         }
-        #navbtn_2{
+        .navbtn_2{
             background-color: #273c75;
             height: 6vh;
             width: 15vh;
@@ -145,6 +145,46 @@
             border-radius: 15px;
             font-size: 25px;
         }
+        .empnav{
+            background-color: #273c75;
+            height: 6vh;
+            width: 18vh;
+            border-radius: 15px;
+            margin-right: 3vw;
+            color: white;
+            font-size: 15px;
+        }
+        .margin{
+            width: 50vw;
+            height: 10vh;
+            position: relative;
+            left: 28rem;
+            justify-content: center;
+
+        }
+        .empbtn{
+            left: 0;
+            height: 60px;
+            position: relative;
+            background: #1d33ab;
+            color: white;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 15px;
+            box-shadow: 1px 2px 3px 2px #3a483b;
+            transition: all 2s;
+        }
+        .empdiv{
+            width: 228px;
+            height: 492px;
+            top: 91px;
+            right: 6rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
         /*#navbtn_3{
             background-color: #273c75;
             height: 6vh;
@@ -164,15 +204,16 @@
     </style>
 </head>
 <body>
+<!--Home page-->
 <section id="dashboard" class="container-fluid">
-    <section id="nav">
+    <section class="nav">
         <div>
-            <img id="img" src="assets/logo.png" alt="">
+            <img class="img" src="assets/logo.png" alt="">
         </div>
 
-        <div id="navbtn_div">
-            <button id="navbtn_1">LOGIN</button>
-            <button id="navbtn_2">SIGN UP</button>
+        <div class="navbtn_div">
+            <button class="navbtn_1">LOGIN</button>
+            <button class="navbtn_2">SIGN UP</button>
         </div>
     </section>
     <div id="content">
@@ -190,6 +231,7 @@
         </div>-->
     </div>
 </section>
+<!--Main Navigation-->
 <nav class="navbar">
     <div>
         <img class="logo" style="margin-top: -0.5rem;" src="assets/logo.png" alt="">
@@ -198,6 +240,7 @@
         <h2 class="nav_text">Make Your Own Money</h2>
     </div>
 </nav>
+<!--Login Form-->
 <section id="login" class="container-fluid container">
     <form id="loginform">
         <div class="text_cover">
@@ -322,6 +365,67 @@
         </div>
         <div class="mb-3">
             <button id="btncreatenewemployee" type="button" class="btn btn-primary btncreate" >CREATE MY ACCOUNT</button>
+        </div>
+    </div>
+</section>
+<!--Loged Dashboard-->
+<section class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="margin">
+            <h1>PLEASE SELECT A OPTION BELOW</h1>
+        </div>
+        <div class="empdiv">
+            <button class="empbtn row" style="width: 15rem">ADD A JOB</button>
+            <button class="empbtn row" style="width: 20rem">REMOVE A JOB</button>
+            <button class="empbtn row" style="width: 25rem">GIVE A FEEDBACK</button>
+            <button class="empbtn row" style="width: 30rem">SCAN STUDENT'S QR</button>
+        </div>
+    </div>
+</section>
+<!--Add a Job-->
+<section class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtemppassion">PASSION :</label>
+            <input class="form-control w-50" id="txtemppassion" placeholder="Passion" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempemail">E-MAIL :</label>
+            <input class="form-control w-50" id="txtempemail" placeholder="E mail" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtempgender">GENDER : </label>
+            <input class="form-control  w-50" id="txtempgender" placeholder="Gender" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtemppassword">PASSWORD : </label>
+            <input class="form-control w-50" id="txtemppassword" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btnaddjob" type="button" class="btn btn-primary btncreate" >ADD A JOB</button>
         </div>
     </div>
 </section>
