@@ -227,6 +227,12 @@
             position: relative;
             left: 2rem;
         }
+        .qrdata{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            left: 28rem;
+        }
     </style>
 </head>
 <body>
@@ -715,6 +721,80 @@
         </div>
 
     </section>
+</section>
+<!--Enter Qr Data-->
+<section id="enterqr" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <h1 style="position: relative;left: 30%;width: 50rem">Student Details</h1>
+    <div class="col-6 pt-5 col1 qrdata">
+
+        <div class="mb-2">
+            <label class="form-label" for="txtqrnic">NIC :</label>
+            <input class="form-control w-50" style="position: relative;left: 6rem" id="txtqrnic" placeholder="Nic" type="text">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="txtqrstname">STUDENT NAME :</label>
+            <input class="form-control w-50" id="txtqrstname" style="position: relative;left: 1rem" placeholder="Student Name" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtqravailablehours">AVAILABLE HOURS : </label>
+            <input class="form-control  w-50" id="txtqravailablehours" placeholder="Available Hours" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtqrworkibghours">WORKING HOURS : </label>
+            <input class="form-control w-50" id="txtqrworkibghours"  placeholder="Working Hours" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btnsubmitqrdata" style="left: 30%" type="button" class="btn btn-primary btncreate" >SUBMIT</button>
+        </div>
+    </div>
+</section>
+<!--Password Change-->
+<section id="changepassword" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <h1 style="position: relative;left: 30%;width: 50rem">Student Details</h1>
+    <div class="col-6 pt-5 col1 qrdata">
+
+        <div class="mb-2">
+            <label class="form-label" for="txtcurrentuserid">USER ID :</label>
+            <input class="form-control w-50" style="position: relative;left: 8rem" id="txtcurrentuserid" placeholder="User Id" type="text">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="txtcurrentpass">CURRENT PASSWORD :</label>
+            <input class="form-control w-50" id="txtcurrentpass" style="position: relative;left: 2rem" placeholder="Current Password" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtnewpass">NEW PASSWORD : </label>
+            <input class="form-control  w-50" id="txtnewpass" style="position: relative;left: 4rem" placeholder="New Password" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtconfirmpass">CONFIRM NEW PASSWORD : </label>
+            <input class="form-control w-50" id="txtconfirmpass"  placeholder="Confirm Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btnupdatepass" style="left: 30%" type="button" class="btn btn-primary btncreate" >UPDATE</button>
+        </div>
+    </div>
 </section>
 
 
