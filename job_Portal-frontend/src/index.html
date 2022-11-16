@@ -159,8 +159,10 @@
             height: 10vh;
             position: relative;
             left: 28rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
             justify-content: center;
-
         }
         .empbtn{
             left: 0;
@@ -408,43 +410,100 @@
         </div>
     </nav>
     <div class="col-6 pt-5 col1">
-        <div class="mb-3">
-            <label class="form-label" for="txtemppassion">COMPANY NAME :</label>
-            <input class="form-control w-50" id="txtemppassion" placeholder="Passion" type="text">
+        <div class="mb-2">
+            <label class="form-label" for="txtcompanyname">COMPANY NAME :</label>
+            <input class="form-control w-50" id="txtcompanyname" placeholder="Company name" type="text">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="txtjobtitle">JOB TITLE :</label>
+            <input class="form-control w-50" id="txtjobtitle" placeholder="Job title" type="text">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="txtempemail">JOB TITLE :</label>
-            <input class="form-control w-50" id="txtempemail" placeholder="Job title" type="text">
+            <label class="form-label" for="txtjoblocation">LOCATION : </label>
+            <input class="form-control  w-50" id="txtjoblocation" placeholder="Location" type="text">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="txtempgender">LOCATION : </label>
-            <input class="form-control  w-50" id="txtempgender" placeholder="Gender" type="text">
+            <label class="form-label" for="txtjobtime">JOB TIME : </label>
+            <input class="form-control w-50" id="txtjobtime" placeholder="Job Time" type="password">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="txtemppassword">JOB TIME : </label>
-            <input class="form-control w-50" id="txtemppassword" placeholder="Password" type="password">
+            <label class="form-label" for="txtjobsalary">SALARY RATE :</label>
+            <input class="form-control w-50" id="txtjobsalary" placeholder="Salary Rate" type="text">
+        </div>
+    </div>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtjobgender">REQUIRED GENDER : </label>
+            <input class="form-control  w-50" id="txtjobgender" placeholder="Gender" type="text">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="txtempemail">SALARY RATE :</label>
-            <input class="form-control w-50" id="txtempemail" placeholder="E mail" type="text">
+            <label class="form-label" for="txtjobskills">REQUIRED SKILLS : </label>
+            <input class="form-control w-50" id="txtjobskills" placeholder="Required Skills" type="password">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="txtempgender">REQUIRED GENDER : </label>
-            <input class="form-control  w-50" id="txtempgender" placeholder="Gender" type="text">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtemppassword">REQUIRED SKILLS : </label>
-            <input class="form-control w-50" id="txtemppassword" placeholder="Password" type="password">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtemppassword">ABOUT JOB : </label>
-            <input class="form-control w-50" id="txtemppassword" placeholder="Password" type="password">
+            <label class="form-label" for="txtaboutjob">ABOUT JOB : </label>
+            <input class="form-control w-50" id="txtaboutjob" placeholder="About" type="password">
         </div>
         <div class="mb-3">
             <button id="btnaddjob" type="button" class="btn btn-primary btncreate" >ADD A JOB</button>
         </div>
     </div>
 </section>
+<!--Congrades-->
+<section class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="margin">
+            <h1>Congradulations...</h1>
+            <h2>YOU SUCCESSFULLY ADDED THE</h2>
+            <h2>JOB</h2>
+        </div>
+        <div class="empdiv">
+
+        </div>
+    </div>
+</section>
+<!--Update/Delete Jobs-->
+<section class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section>
+        <div class="col-8 tbldiv">
+            <table class="table table-bordered table-hover">
+                <tbody id="tbljobs">
+                <tr class="bg-info">
+                    <td colspan="4">wfewefw</td>
+                    <td>wreftwft2qwf</td>
+                    <td>wfetfgwg</td>
+                    <td>jsfcvuywfucvwu</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
 
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
