@@ -200,22 +200,22 @@
             position: absolute;
             top: 10rem;
         }
-        /*#navbtn_3{
-            background-color: #273c75;
-            height: 6vh;
-            width: 15vh;
-            border-radius: 15px;
-            color: white;
-            font-size: 1.2rem;
+        .qrdiv{
+            height: 15rem;
+            width: 17rem;
+            position: absolute;
+            border: 2px solid black;
+            left: 40rem;
+            top: 20rem;
         }
-        #navbtn_4{
-            background-color: #273c75;
-            height: 6vh;
-            width: 15vh;
+        .downqrbtn{
+            position: absolute;
+            bottom: 3rem;
+            right: 40rem;
+            width: 11rem;
             border-radius: 15px;
-            color: white;
-            font-size: 1.2rem;
-        }*/
+            font-size: 25px;
+        }
     </style>
 </head>
 <body>
@@ -272,7 +272,7 @@
     </form>
 </section>
 <!--Student New Acc-->
-<section class="newAcc row">
+<section id="newstacc" class="newAcc row">
     <nav class="navbar row">
         <div>
             <img class="logo" style="margin-top: -0.5rem;margin-left: -2rem;" src="assets/logo.png" alt="">
@@ -330,7 +330,7 @@
     </div>
 </section>
 <!--Employee new App-->
-<section class="newAcc row">
+<section id="newempacc" class="newAcc row">
     <nav class="navbar row">
         <div>
             <img class="logo" style="margin-top: -0.5rem;margin-left: -2rem;" src="assets/logo.png" alt="">
@@ -384,7 +384,7 @@
     </div>
 </section>
 <!--Loged Dashboard-->
-<section class="newAcc row">
+<section id="logeddashboard" class="newAcc row">
     <nav class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -410,7 +410,7 @@
     </div>
 </section>
 <!--Add a Job-->
-<section class="newAcc row">
+<section id="addjob" class="newAcc row">
     <nav class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -463,7 +463,7 @@
     </div>
 </section>
 <!--Congrades-->
-<section class="newAcc row">
+<section id="congrades" class="newAcc row">
     <nav class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -483,12 +483,12 @@
             <h2>JOB</h2>
         </div>
         <div class="empdiv">
-
+            <img src="assets/handshake.jpg" alt="" style="width: 30rem;border-radius: 25px">
         </div>
     </div>
 </section>
 <!--Update/Delete Jobs-->
-<section class="newAcc row">
+<section id="updatedeletejobmain" class="newAcc row">
     <nav class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -513,9 +513,9 @@
                 <tbody id="tbljobs">
                 <tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
-                    <td><button class="text-white bg-primary" id="newjob" style="border-radius: 15px;width:7rem">NEW</button></td>
-                    <td><button class="text-white bg-primary" id="updatejob" style="border-radius: 15px;width:7rem">UPDATE</button></td>
-                    <td><button class="text-white bg-primary" id="deletejob" style="border-radius: 15px;width:7rem">DELETE</button></td>
+                    <td><button class="text-white bg-primary" id="btnnew" style="border-radius: 15px;width:7rem">NEW</button></td>
+                    <td><button class="text-white bg-primary" id="btnupdate" style="border-radius: 15px;width:7rem">UPDATE</button></td>
+                    <td><button class="text-white bg-primary" id="btndelete" style="border-radius: 15px;width:7rem">DELETE</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -523,9 +523,60 @@
     </section>
 </section>
 <!--Update Job-->
-
+<section id="updatejob" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-2">
+            <label class="form-label" for="txtupdatecompanyname">COMPANY NAME :</label>
+            <input class="form-control w-50" id="txtupdatecompanyname" placeholder="Company name" type="text">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="txtupdatejobtitle">JOB TITLE :</label>
+            <input class="form-control w-50" id="txtupdatejobtitle" placeholder="Job title" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtupdatejoblocation">LOCATION : </label>
+            <input class="form-control  w-50" id="txtupdatejoblocation" placeholder="Location" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtupdatejobtime">JOB TIME : </label>
+            <input class="form-control w-50" id="txtupdatejobtime" placeholder="Job Time" type="password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtupdatejobsalary">SALARY RATE :</label>
+            <input class="form-control w-50" id="txtupdatejobsalary" placeholder="Salary Rate" type="text">
+        </div>
+    </div>
+    <div class="col-6 pt-5 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtupdatejobgender">REQUIRED GENDER : </label>
+            <input class="form-control  w-50" id="txtupdatejobgender" placeholder="Gender" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtupdatejobskills">REQUIRED SKILLS : </label>
+            <input class="form-control w-50" id="txtupdatejobskills" placeholder="Required Skills" type="password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtupdateaboutjob">ABOUT JOB : </label>
+            <input class="form-control w-50" id="txtupdateaboutjob" placeholder="About" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" >UPDATE</button>
+        </div>
+    </div>
+</section>
 <!--Filter job-->
-<section class="newAcc row">
+<section id="filterjob" class="newAcc row">
     <nav class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -565,7 +616,36 @@
         </div>
     </section>
 </section>
+<!--Qr-->
+<section id="qr" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
 
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section>
+        <div class="margin" style="bottom: 14rem">
+            <h2>You are successfully create account.</h2>
+            <h2>Here is your Qr code</h2>
+        </div>
+        <div class="qrdiv">
+
+        </div>
+        <div>
+            <div class="mb-3">
+                <button id="btndownqr" type="button" class="btn btn-primary downqrbtn" >Download</button>
+            </div>
+        </div>
+
+    </section>
+</section>
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
