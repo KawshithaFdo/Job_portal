@@ -205,16 +205,27 @@
             width: 17rem;
             position: absolute;
             border: 2px solid black;
-            left: 40rem;
+            left: 42rem;
             top: 20rem;
         }
         .downqrbtn{
             position: absolute;
             bottom: 3rem;
-            right: 40rem;
+            right: 38rem;
             width: 11rem;
             border-radius: 15px;
             font-size: 25px;
+        }
+        .feedback{
+            position: relative;
+            left: 25rem;
+            height: 61vh;
+            width: 60vw;
+        }
+        .txtfeedback{
+            height: 15rem;
+            position: relative;
+            left: 2rem;
         }
     </style>
 </head>
@@ -646,6 +657,67 @@
 
     </section>
 </section>
+<!--Give Feedback-->
+<section id="feedback" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section class="feedback">
+        <div class=" mb-3">
+            <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedbackstnic">Student Nic :</label>
+            <input class="form-control w-50" id="txtfeedbackstnic" placeholder="Student Nic" type="text">
+        </div>
+        <div class=" mb-3">
+            <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedback">Write your<br>Feedback : </label>
+            <input class="form-control  w-50 txtfeedback"  id="txtfeedback" placeholder="Feedback" type="text">
+        </div>
+        <div class=" mb-3">
+            <button id="btnfeedback" style="right: 28rem" type="button" class="btn btn-primary btncreate" >SUBMIT</button>
+        </div>
+
+    </section>
+</section>
+<!--Scan Qr-->
+<section id="scanqr" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section>
+        <div class="margin" style="bottom: 14rem">
+            <h2>Please scan Student's </h2>
+            <h2>Qr code</h2>
+        </div>
+        <div class="qrdiv">
+
+        </div>
+        <div>
+            <div class="mb-3">
+                <button id="btnscanqr" type="button" class="btn btn-primary downqrbtn" >Scan</button>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
