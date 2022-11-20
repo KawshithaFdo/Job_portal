@@ -233,6 +233,32 @@
             flex-direction: column;
             left: 28rem;
         }
+        .empaccsec{
+            position: relative;
+            bottom: 10rem;
+        }
+        .empacch2{
+            position: relative;
+            width: 50vw;
+            bottom: 2rem;
+            left: 24rem;
+        }
+        .tbl{
+            border-radius: 25px !important;
+            border-width: 5px !important;
+            border-style: solid !important;
+            border-color: rgba(0, 128, 255, 0.9) !important;
+            width: 90%;  /*Tested and working as expected: */
+            padding-top: 1%;
+            margin: 0px auto;
+            float: none;
+        }
+        .empaccbtn{
+            width: 25rem;
+            height: 20rem;
+            position: absolute;
+            bottom: 0rem;
+        }
     </style>
 </head>
 <body>
@@ -520,7 +546,7 @@
     </nav>
     <section>
         <div class="col-6 tbldiv">
-            <table class="table  table-hover">
+            <table class="table  table-hover tbl">
                 <colgroup>
                     <col span="1" style="width: 55%;">
                     <col span="1" style="width: 15%;">
@@ -616,7 +642,7 @@
             </div>
         </div>
         <div class="col-6 tbldiv" style="bottom: 0">
-            <table class="table  table-hover">
+            <table class="table  table-hover tbl">
                 <colgroup>
                     <col span="1" style="width: 55%;">
                     <col span="1" style="width: 15%;">
@@ -796,7 +822,157 @@
         </div>
     </div>
 </section>
+<!--Emp Acc-->
+<section id="empacc" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
 
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section class="row empaccsec">
+        <div class="col-4 pt-5 ml-1 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtempname">NAME :</label>
+                <input class="form-control w-50" id="txtempaccname" placeholder="Name" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtempnic">NIC :</label>
+                <input class="form-control w-50" id="txtempaccnic" placeholder="Nic" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtempcompany">COMPANY<br> NAME :</label>
+                <input class="form-control w-50" id="txtempacccompany" placeholder="Company Name" type="text">
+            </div>
+        </div>
+        <div class="col-4 pt-5 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtempacccontact">CONTACT :</label>
+                <input class="form-control w-50" id="txtempacccontact" placeholder="Contact" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtempaccaddress">ADDRESS :</label>
+                <input class="form-control w-50" id="txtempaccaddress" placeholder="Address" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtempaccposition">POSITION : </label>
+                <input class="form-control  w-50" id="txtempaccposition" placeholder="Position" type="text">
+            </div>
+        </div>
+        <div class="col-4 pt-5 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtempaccemail">E-MAIL :</label>
+                <input class="form-control w-50" id="txtempaccemail" placeholder="E mail" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtempaccgender">GENDER :</label>
+                <input class="form-control w-50" id="txtempaccgender" placeholder="Gender" type="text">
+            </div>
+        </div>
+        <h2 class="empacch2">My Jobs</h2>
+        <section>
+            <div class="col-6 tbldiv" style="bottom: 2rem">
+                <table class="table  table-hover tbl">
+                    <colgroup>
+                        <col span="1" style="width: 55%;">
+                        <col span="1" style="width: 15%;">
+                        <col span="1" style="width: 15%;">
+                        <col span="1" style="width: 15%;">
+                    </colgroup>
+                    <tbody id="tblempacc">
+                    <tr class="bg-info">
+                        <td class="tbltxt">Car Cleaner</td>
+                        <td><button class="text-white bg-primary" id="btnviewemp" style="border-radius: 15px;width:7rem">VIEW</button></td>
+                        <td><button class="text-white bg-primary" id="btnupdateemp" style="border-radius: 15px;width:7rem">UPDATE</button></td>
+                        <td><button class="text-white bg-primary" id="btndeleteemp" style="border-radius: 15px;width:7rem">DELETE</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="empaccbtn">
+            <button id="btnchangeemppass" style="position:relative;left: 2rem;top: 20rem;"  type="button" class="btn btn-dark btncreate w-75" >Change Password</button>
+            <button id="btnaddnewempjob" style="position:relative;left: 68rem;top: 17rem;"  type="button" class="btn btn-dark btncreate w-75" >Add New Job</button>
+        </div>
+    </section>
+</section>
+<!--Student Feedbacks-->
+<section id="stfeedback" class="newAcc row">
+    <nav class="nav">
+        <div>
+            <img class="img" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="navbtn_div" style="left: 80vh">
+            <button class="empnav">HOME</button>
+            <button class="empnav">MAIN MENU</button>
+            <button class="empnav">MY ACCOUNT</button>
+            <button class="empnav">LOGOUT</button>
+        </div>
+    </nav>
+    <section class="row empaccsec">
+        <div class="col-4 pt-5 ml-1 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtstname">NAME :</label>
+                <input class="form-control w-50" id="txtstname" placeholder="Name" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtstnic">NIC :</label>
+                <input class="form-control w-50" id="txtstnic" placeholder="Nic" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtstdob">DATE OF BIRTH :</label>
+                <input class="form-control w-50" id="txtstdob" placeholder="Date of birth" type="text">
+            </div>
+        </div>
+        <div class="col-4 pt-5 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtstcontact">CONTACT :</label>
+                <input class="form-control w-50" id="txtstcontact" placeholder="Contact" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtstunivercity">UNIVERCITY :</label>
+                <input class="form-control w-50" id="txtstunivercity" placeholder="Univercity" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtstlocation">LOCATION : </label>
+                <input class="form-control  w-50" id="txtstlocation" placeholder="Location" type="text">
+            </div>
+        </div>
+        <div class="col-4 pt-5 col1">
+            <div class="mb-3">
+                <label class="form-label" for="txtstemail">E-MAIL :</label>
+                <input class="form-control w-50" id="txtstemail" placeholder="E mail" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtstgender">GENDER :</label>
+                <input class="form-control w-50" id="txtstgender" placeholder="Gender" type="text">
+            </div>
+        </div>
+        <h2 class="empacch2">FEEDBACKS</h2>
+        <section>
+            <div class="col-6 tbldiv" style="bottom: 2rem">
+                <table class="table  table-hover tbl">
+                    <tbody id="tblstfeedbacks">
+                    <tr class="bg-info">
+                        <td class="tbltxt">Car Cleaner</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="empaccbtn">
+            <button id="btnchangestpass" style="position:relative;left: 2rem;top: 20rem;"  type="button" class="btn btn-dark btncreate w-75" >Change Password</button>
+            <button id="btnaddnewstjob" style="position:relative;left: 68rem;top: 17rem;"  type="button" class="btn btn-dark btncreate w-75" >Add New Job</button>
+        </div>
+    </section>
+</section>
 
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
