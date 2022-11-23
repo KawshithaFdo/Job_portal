@@ -10,9 +10,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
         /*Dashboard*/
-        #dashboard{
-            height: 99vh;
-        }
         .nav{
             position: relative;
             height: 10vh;
@@ -98,7 +95,7 @@
             flex-wrap: wrap;
             flex-direction: column;
             background-color: #F8EFBA;
-            height: 99vh;
+            height: 88vh;
             width: 87vw;
             align-items: center;
             justify-content: center;
@@ -271,8 +268,8 @@
         </div>
 
         <div class="navbtn_div">
-            <button class="navbtn_1">LOGIN</button>
-            <button class="navbtn_2">SIGN UP</button>
+            <button id="navlog" class="navbtn_1">LOGIN</button>
+            <button id="navsign" class="navbtn_2">SIGN UP</button>
         </div>
     </section>
     <div id="content">
@@ -284,14 +281,10 @@
         <div>
             <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
         </div>
-        <!--<div>
-            <button id="navbtn_3">LOGIN</button>
-            <button id="navbtn_4">SIGN UP</button>
-        </div>-->
     </div>
 </section>
 <!--Main Navigation-->
-<nav class="navbar">
+<nav id="nav" class="navbar">
     <div>
         <img class="logo" style="margin-top: -0.5rem;" src="assets/logo.png" alt="">
     </div>
@@ -962,6 +955,11 @@
         </div>
     </section>
 </section>
+<!--Alert Btn-->
+<div class="alert w-25" id="alert" style="display: none">
+    <h5 id="text"></h5>
+    <span class="closebtn " style="cursor: pointer;" onclick="this.parentElement.style.display='none';">&times;</span>
+</div>
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1028,6 +1026,72 @@
             $("#loginbtn").attr('disabled', true);
         }
     }
+    /*----------------------------------------------------------------------------*/
+    logout();
+    $("#navlog").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "block");
+        $("#login").css("display", "flex");
+    });
+    $("#navsign").click(function () {
+        $("#login").css("display", "none");
+        $("#dashboard").css("display", "none");
+        $("#newstacc").css("display", "flex");
+    });
+    $("#btncreate").click(function () {
+     /*Success the new St Account*/
+        $("#nav").css("display", "none");
+        $("#dashboard").css("display", "block");
+        $("#newstacc").css("display", "none");
+        success();
+
+    });
+
+
+    function logout() {
+        $("#dashboard").css("display", "block");
+        $("#nav").css("display", "none");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "none");
+        $("#stfeedback").css("display", "none");
+    }
+    function login() {
+        $("#generalCars").css("display","none");
+        $("#Update_User").css("display","block");
+        $("#Place_Order").css("display","none");
+        $("#dashboard").css("display","none");
+        $("#nav").css("display","none");
+        $("#premiumCars").css("display","none");
+        $("#generalCars").css("display","none");
+        $("#luxuryCars").css("display","none");
+    }
+
+    function error(){
+        $("#alert").css("display","block");
+        $("#alert").css("position","absolute");
+        $("#alert").css("backgroundColor","#f44336");
+        document.getElementById("text").innerText="Error. Please Try Again!";
+    }
+    function success(){
+        $("#alert").css("display","block");
+        $("#alert").css("position","absolute");
+        $("#alert").css("backgroundColor","#00b894");
+        document.getElementById("text").innerText="Success!";
+    }
+
 
 </script>
 </body>
