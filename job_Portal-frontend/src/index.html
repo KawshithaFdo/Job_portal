@@ -128,8 +128,8 @@
         .newAcc{
             position: relative;
             left: 24px;
-            width: 97vw;
-            height: 99vh;
+            width: 96vw;
+            height: 89vh;
             background: rgba(183, 132, 55, 0.15);
         }
         .col1{
@@ -187,7 +187,7 @@
         }
         .tbldiv{
             position: relative;
-            bottom: 80px;
+            top: 180px;
             left: 352px;
         }
         .tbltxt{
@@ -256,6 +256,11 @@
             height: 320px;
             position: absolute;
             bottom: 0px;
+        }
+        .empacc{
+            position: relative;
+            top: 45px;
+            left: 200px;
         }
     </style>
 </head>
@@ -364,6 +369,7 @@
         <div class="mb-3">
             <button id="btncreate" style="bottom: 35px;" type="button" class="btn btn-primary btncreate w-50" >CREATE MY ACCOUNT</button>
         </div>
+        <a href="#" id="empsignin" class="link-primary empacc">SIGN IN AS EMPLOYER</a>
     </div>
 </section>
 <!--Employee new Acc-->
@@ -420,45 +426,35 @@
         </div>
     </div>
 </section>
+<!--Loged main nav-->
+<nav class="nav" id="logednav">
+    <div>
+        <img class="img" src="assets/logo.png" alt="">
+    </div>
+
+    <div class="navbtn_div" style="left: 80vh">
+        <button id="navhome" class="empnav">HOME</button>
+        <button id="navmenu" class="empnav">MAIN MENU</button>
+        <button id="navmyacc" class="empnav">MY ACCOUNT</button>
+        <button id="logout" class="empnav">LOGOUT</button>
+    </div>
+</nav>
 <!--Loged Dashboard-->
 <section id="logeddashboard" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <div class="row">
         <div class="margin">
             <h1>PLEASE SELECT A OPTION BELOW</h1>
         </div>
         <div class="empdiv">
-            <button class="empbtn row" style="width: 240px">ADD A JOB</button>
-            <button class="empbtn row" style="width: 320px">REMOVE A JOB</button>
-            <button class="empbtn row" style="width: 400px">GIVE A FEEDBACK</button>
-            <button class="empbtn row" style="width: 480px">SCAN STUDENT'S QR</button>
+            <button class="empbtn row" id="addajob" style="width: 240px">ADD A JOB</button>
+            <button class="empbtn row" id="removeajob" style="width: 320px">REMOVE A JOB</button>
+            <button class="empbtn row" id="givefeedback" style="width: 400px">GIVE A FEEDBACK</button>
+            <button class="empbtn row" id="scanstqr" style="width: 480px">SCAN STUDENT'S QR</button>
         </div>
     </div>
 </section>
 <!--Add a Job-->
 <section id="addjob" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <div class="col-6 pt-5 col1">
         <div class="mb-2">
             <label class="form-label" for="txtcompanyname">COMPANY NAME :</label>
@@ -501,19 +497,7 @@
 </section>
 <!--Congrades-->
 <section id="congrades" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
-    <div class="row">
+    <div class="row" style="position: relative;top: 100px;">
         <div class="margin">
             <h1>Congradulations...</h1>
             <h2>YOU SUCCESSFULLY ADDED THE</h2>
@@ -526,18 +510,6 @@
 </section>
 <!--Update/Delete Jobs-->
 <section id="updatedeletejobmain" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section>
         <div class="col-6 tbldiv">
             <table class="table  table-hover tbl">
@@ -555,17 +527,6 @@
 </section>
 <!--Update Job-->
 <section id="updatejob" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <div class="col-6 pt-5 col1">
         <div class="mb-2">
             <label class="form-label" for="txtupdatecompanyname">COMPANY NAME :</label>
@@ -608,18 +569,6 @@
 </section>
 <!--Filter job-->
 <section id="filterjob" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section>
         <div class="col1 filterjob">
             <h1>FILTER BY</h1>
@@ -643,18 +592,6 @@
 </section>
 <!--Qr-->
 <section id="qr" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section>
         <div class="margin" style="bottom: 224px">
             <h2>You are successfully create account.</h2>
@@ -673,18 +610,6 @@
 </section>
 <!--Give Feedback-->
 <section id="feedback" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section class="feedback">
         <div class=" mb-3">
             <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedbackstnic">Student Nic :</label>
@@ -702,18 +627,6 @@
 </section>
 <!--Scan Qr-->
 <section id="scanqr" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section>
         <div class="margin" style="bottom: 224px">
             <h2>Please scan Student's </h2>
@@ -732,17 +645,6 @@
 </section>
 <!--Enter Qr Data-->
 <section id="enterqr" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <h1 style="position: relative;left: 30%;width: 800px">Student Details</h1>
     <div class="col-6 pt-5 col1 qrdata">
 
@@ -769,17 +671,6 @@
 </section>
 <!--Password Change-->
 <section id="changepassword" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <h1 style="position: relative;left: 30%;width: 800px">Student Details</h1>
     <div class="col-6 pt-5 col1 qrdata">
 
@@ -806,18 +697,6 @@
 </section>
 <!--Emp Acc-->
 <section id="empacc" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section class="row empaccsec">
         <div class="col-4 pt-5 ml-1 col1">
             <div class="mb-3">
@@ -886,18 +765,6 @@
 </section>
 <!--Student Feedbacks-->
 <section id="stfeedback" class="newAcc row">
-    <nav class="nav">
-        <div>
-            <img class="img" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="navbtn_div" style="left: 80vh">
-            <button class="empnav">HOME</button>
-            <button class="empnav">MAIN MENU</button>
-            <button class="empnav">MY ACCOUNT</button>
-            <button class="empnav">LOGOUT</button>
-        </div>
-    </nav>
     <section class="row empaccsec">
         <div class="col-4 pt-5 ml-1 col1">
             <div class="mb-3">
@@ -1046,11 +913,63 @@
         success();
 
     });
+    $("#btncreatenewemployee").click(function () {
+        /*Success the new Emp Account*/
+        $("#nav").css("display", "none");
+        $("#dashboard").css("display", "block");
+        $("#newempacc").css("display", "none");
+        success();
+
+    });
+    $("#empsignin").click(function () {
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "flex");
+
+    });
+    /*Login Button*/
+    $("#loginbtn").click(function () {
+        $("#login").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logednav").css("display", "block");
+        $("#logeddashboard").css("display", "flex");
+    });
+    $("#logout").click(function () {
+       /* $("#dashboard").css("display", "block");
+        $("#nav").css("display", "none");
+        $("#logednav").css("display", "none");
+        $("#logeddashboard").css("display", "none");*/
+        logout();
+    });
+    $("#navhome").click(function () {
+        // $("#dashboard").css("display", "block");
+        $("#logeddashboard").css("display", "none");
+    });/*nav*/
+    $("#navmyacc").click(function () {
+
+    });
+    $("#navmenu").click(function () {
+
+    });/*nav*/
+
+    $("#addajob").click(function () {
+        $("#logeddashboard").css("display", "none");
+        $("#addjob").css("display", "flex");
+    });
+    $("#btnaddjob").click(function () {
+        $("#congrades").css("display", "block");
+        $("#addjob").css("display", "none");
+    });
+
+    $("#removeajob").click(function () {
+        $("#logeddashboard").css("display", "none");
+        $("#updatedeletejobmain").css("display", "block");
+    });
 
 
     function logout() {
         $("#dashboard").css("display", "block");
         $("#nav").css("display", "none");
+        $("#logednav").css("display", "none");
         $("#login").css("display", "none");
         $("#newstacc").css("display", "none");
         $("#newempacc").css("display", "none");
@@ -1068,17 +987,6 @@
         $("#empacc").css("display", "none");
         $("#stfeedback").css("display", "none");
     }
-    function login() {
-        $("#generalCars").css("display","none");
-        $("#Update_User").css("display","block");
-        $("#Place_Order").css("display","none");
-        $("#dashboard").css("display","none");
-        $("#nav").css("display","none");
-        $("#premiumCars").css("display","none");
-        $("#generalCars").css("display","none");
-        $("#luxuryCars").css("display","none");
-    }
-
     function error(){
         $("#alert").css("display","block");
         $("#alert").css("position","absolute");
