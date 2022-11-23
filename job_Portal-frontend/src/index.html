@@ -88,7 +88,6 @@
             margin: 8px 0;
             padding: 12px 20px;
             display: inline-block;
-            border: 2px solid green;
             box-sizing: border-box;
         }
         .button:hover {
@@ -312,7 +311,7 @@
             <input class="form-control w-50" style="margin-left: 48px;" id="txtloginPassword" placeholder="Password" type="password">
         </div>
         <div >
-            <button type="button" style="top: 130px;" class="button">Log In</button>
+            <button id="loginbtn" type="button" style="top: 130px;" class="btn button">Log In</button>
         </div>
     </form>
 </section>
@@ -964,7 +963,72 @@
     </section>
 </section>
 
-
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    /*-------------------Validate Login--------------------------------------------*/
+    const UserPasswordRegEx = /^[A-z0-9 ]{3,}$/;
+    const UserNameRegEx = /^[A-z0-9 ]{3,}$/;
+    $('#txtloginUserid,#txtloginPassword').on('keydown', function (eventOb) {
+        if (eventOb.key == "Tab") {
+            eventOb.preventDefault();
+        }
+    });
+    $("#txtloginUserid").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkValid();
+        }
+
+    });
+    $("#txtloginPassword").on('keyup', function (eventOb) {
+        setButton();
+        if (eventOb.key == "Enter") {
+            checkValid();
+        }
+    });
+    $("#loginbtn").attr('disabled', true);
+    function Valid() {
+        var username = $("#txtloginUserid").val();
+        $("#txtloginUserid").css('border', '2px solid green');
+        if (UserNameRegEx.test(username)) {
+            var userpassword = $("#txtloginPassword").val();
+            var resp = UserPasswordRegEx.test(userpassword);
+            if (resp) {
+                $("#txtloginPassword").css('border', '2px solid green');
+                return true;
+            } else {
+                $("#txtloginPassword").css('border', '2px solid red');
+                return false;
+            }
+        } else {
+            $("#txtloginUserid").css('border', '2px solid red');
+            return false;
+        }
+    }
+    function checkValid() {
+        var username = $("#txtloginUserid").val();
+        if (UserNameRegEx.test(username)) {
+            $("#txtloginPassword").focus();
+            var userpassword = $("#txtloginPassword").val();
+            if (UserPasswordRegEx.test(userpassword)) {
+                $("#loginbtn").focus();
+            } else {
+                $("#txtloginPassword").focus();
+            }
+        } else {
+            $("#txtloginUserid").focus();
+        }
+    }
+    function setButton() {
+        let b = Valid();
+        if (b) {
+            $("#loginbtn").attr('disabled', false);
+        } else {
+            $("#loginbtn").attr('disabled', true);
+        }
+    }
+
+</script>
 </body>
 </html>
