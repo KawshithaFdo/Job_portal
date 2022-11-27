@@ -129,7 +129,7 @@
             position: relative;
             left: 24px;
             width: 96vw;
-            height: 89vh;
+            height: 86vh;
             background: rgba(183, 132, 55, 0.15);
         }
         .col1{
@@ -146,9 +146,9 @@
         .empnav{
             background-color: #273c75;
             height: 6vh;
-            width: 18vh;
+            width: 21vh;
             border-radius: 15px;
-            margin-right: 3vw;
+            margin-right: 1vw;
             color: white;
             font-size: 15px;
         }
@@ -203,8 +203,8 @@
             width: 272px;
             position: absolute;
             border: 2px solid black;
-            left: 570px;
-            top: 320px;
+            left: 610px;
+            top: 270px;
         }
         .downqrbtn{
             position: absolute;
@@ -233,12 +233,11 @@
         }
         .empaccsec{
             position: relative;
-            bottom: 160px;
         }
         .empacch2{
             position: relative;
             width: 50vw;
-            bottom: 32px;
+            top: 22px;
             left: 384px;
         }
         .tbl{
@@ -309,7 +308,8 @@
             <input class="form-control w-50" style="margin-left: 48px;" id="txtloginPassword" placeholder="Password" type="password">
         </div>
         <div >
-            <button id="loginbtn" type="button" style="top: 130px;" class="btn button">Log In</button>
+            <button id="loginbtn" type="button" style="top: 130px;left: 200px" class="btn button w-25">Student Log In</button>
+            <button id="loginempbtn" type="button" style="top: 130px;left: 200px" class="btn button w-25">Employee Log In</button>
         </div>
     </form>
 </section>
@@ -367,7 +367,7 @@
             <input class="form-control w-50" id="txtpassword" placeholder="Password" type="password">
         </div>
         <div class="mb-3">
-            <button id="btncreate" style="bottom: 35px;" type="button" class="btn btn-primary btncreate w-50" >CREATE MY ACCOUNT</button>
+            <button id="btncreate" style="bottom: 10px;" type="button" class="btn btn-primary btncreate w-50" >CREATE MY ACCOUNT</button>
         </div>
         <a href="#" id="empsignin" class="link-primary empacc">SIGN IN AS EMPLOYER</a>
     </div>
@@ -426,20 +426,20 @@
         </div>
     </div>
 </section>
-<!--Loged main nav-->
+<!--Loged main nav employee-->
 <nav class="nav" id="logednav">
     <div>
         <img class="img" src="assets/logo.png" alt="">
     </div>
 
     <div class="navbtn_div" style="left: 80vh">
-        <button id="navhome" class="empnav">HOME</button>
         <button id="navmenu" class="empnav">MAIN MENU</button>
-        <button id="navmyacc" class="empnav">MY ACCOUNT</button>
+<!--        <button id="navstacc" class="empnav">STUDENT ACCOUNT</button>-->
+        <button id="navempacc" class="empnav">MY ACCOUNT</button>
         <button id="logout" class="empnav">LOGOUT</button>
     </div>
 </nav>
-<!--Loged Dashboard-->
+<!--Loged Dashboard employee-->
 <section id="logeddashboard" class="newAcc row">
     <div class="row">
         <div class="margin">
@@ -447,8 +447,34 @@
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="addajob" style="width: 240px">ADD A JOB</button>
-            <button class="empbtn row" id="removeajob" style="width: 320px">REMOVE A JOB</button>
-            <button class="empbtn row" id="givefeedback" style="width: 400px">GIVE A FEEDBACK</button>
+            <button class="empbtn row" id="removeajob" style="width: 320px">REMOVE/UPDATE A JOB</button>
+            <button class="empbtn row" id="changeemppassword" style="width: 400px">CHANGE PASSWORD</button>
+<!--            <button class="empbtn row" id="scanstqr" style="width: 480px">SCAN STUDENT'S QR</button>-->
+        </div>
+    </div>
+</section>
+<!--Loged main nav student-->
+<nav class="nav" id="logedstnav">
+    <div>
+        <img class="img" src="assets/logo.png" alt="">
+    </div>
+
+    <div class="navbtn_div" style="left: 80vh">
+        <button id="navmenust" class="empnav">MAIN MENU</button>
+        <button id="navstuacc" class="empnav">MY ACCOUNT</button>
+        <button id="logoutst" class="empnav">LOGOUT</button>
+    </div>
+</nav>
+<!--Loged Dashboard student-->
+<section id="logeddashboardst" class="newAcc row">
+    <div class="row">
+        <div class="margin">
+            <h1>PLEASE SELECT A OPTION BELOW</h1>
+        </div>
+        <div class="empdiv">
+            <button class="empbtn row" id="findajob" style="width: 240px">APPLY A JOB</button>
+            <button class="empbtn row" id="giveafeedback" style="width: 320px">GIVE A FEEDBACK</button>
+            <button class="empbtn row" id="changestpassword" style="width: 400px">CHANGE PASSWORD</button>
             <button class="empbtn row" id="scanstqr" style="width: 480px">SCAN STUDENT'S QR</button>
         </div>
     </div>
@@ -516,9 +542,9 @@
                 <tbody id="tbljobs">
                 <tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
-                    <td><button class="text-white bg-primary" id="btnnew" style="border-radius: 15px;width:112px">NEW</button></td>
+<!--                    <td><button class="text-white bg-primary" id="btnnew" style="border-radius: 15px;width:112px">NEW</button></td>-->
                     <td><button class="text-white bg-primary" id="btnupdate" style="border-radius: 15px;width:112px">UPDATE</button></td>
-                    <td><button class="text-white bg-primary" id="btndelete" style="border-radius: 15px;width:112px">DELETE</button></td>
+                    <td><button class="text-white bg-danger" id="btndelete" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -583,7 +609,7 @@
                 <tbody id="tblseejobs">
                 <tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
-                    <td><button class="text-white bg-primary" id="seemore" style="border-radius: 15px;width:112px">see more</button></td>
+                    <td><button class="text-white bg-primary" id="btnapplyjob" style="border-radius: 15px;width:112px">apply</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -593,7 +619,8 @@
 <!--Qr-->
 <section id="qr" class="newAcc row">
     <section>
-        <div class="margin" style="bottom: 224px">
+        <button id="btnhome" style="position: relative;top: 20px;" type="button" class="btn btn-secondary W-25" >MAINMENU</button>
+        <div class="margin" style="top: 40px;">
             <h2>You are successfully create account.</h2>
             <h2>Here is your Qr code</h2>
         </div>
@@ -622,13 +649,23 @@
         <div class=" mb-3">
             <button id="btnfeedback" style="right: 28rem;bottom: 25px;" type="button" class="btn btn-primary btncreate" >SUBMIT</button>
         </div>
-
+    </section>
+    <section>
+        <div class="col-6 tbldiv" style="top:0px;">
+            <table class="table  table-hover tbl">
+                <tbody id="tblstfeedbacks">
+                <tr class="bg-info">
+                    <td class="tbltxt">Car Cleaner</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </section>
 <!--Scan Qr-->
 <section id="scanqr" class="newAcc row">
     <section>
-        <div class="margin" style="bottom: 224px">
+        <div class="margin" style="top: 70px;">
             <h2>Please scan Student's </h2>
             <h2>Qr code</h2>
         </div>
@@ -669,7 +706,7 @@
         </div>
     </div>
 </section>
-<!--Password Change-->
+<!--Password Change student-->
 <section id="changepassword" class="newAcc row">
     <h1 style="position: relative;left: 30%;width: 800px">Student Details</h1>
     <div class="col-6 pt-5 col1 qrdata">
@@ -691,7 +728,33 @@
             <input class="form-control w-50" id="txtconfirmpass"  placeholder="Confirm Password" type="password">
         </div>
         <div class="mb-3">
-            <button id="btnupdatepass" style="left:105px;bottom: 33px;" type="button" class="btn btn-primary btncreate w-50" >UPDATE</button>
+            <button id="btnupdatepass" style="left:105px;/*bottom: 33px;*/" type="button" class="btn btn-primary btncreate w-50" >CONFIRM</button>
+        </div>
+    </div>
+</section>
+<!--Password Change employee-->
+<section id="changeemployeepassword" class="newAcc row">
+    <h1 style="position: relative;left: 30%;width: 800px">Employee Details</h1>
+    <div class="col-6 pt-5 col1 qrdata">
+
+        <div class="mb-2">
+            <label class="form-label" for="txtcurrentid">EMP ID :</label>
+            <input class="form-control w-50" style="position: relative;left: 128px" id="txtcurrentid" placeholder="Emp Id" type="text">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="txtcurrentemppass">CURRENT PASSWORD :</label>
+            <input class="form-control w-50" id="txtcurrentemppass" style="position: relative;left: 32px" placeholder="Current Password" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtnewemppass">NEW PASSWORD : </label>
+            <input class="form-control  w-50" id="txtnewemppass" style="position: relative;left: 64px" placeholder="New Password" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="txtconfirmemppass">CONFIRM NEW PASSWORD : </label>
+            <input class="form-control w-50" id="txtconfirmemppass"  placeholder="Confirm Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button id="btnupdateemppass" style="left:105px;/*bottom: 33px;*/" type="button" class="btn btn-primary btncreate w-50" >CONFIRM</button>
         </div>
     </div>
 </section>
@@ -736,9 +799,8 @@
                 <input class="form-control w-50" id="txtempaccgender" placeholder="Gender" type="text">
             </div>
         </div>
-        <h2 class="empacch2">My Jobs</h2>
         <section>
-            <div class="col-6 tbldiv" style="bottom: 2rem">
+            <div class="col-6 tbldiv" style="position: relative;bottom: 5rem;">
                 <table class="table  table-hover tbl">
                     <colgroup>
                         <col span="1" style="width: 55%;">
@@ -757,13 +819,9 @@
                 </table>
             </div>
         </section>
-        <div class="empaccbtn">
-            <button id="btnchangeemppass" style="position:relative;left: 32px;top: 320px;"  type="button" class="btn btn-dark btncreate w-75" >Change Password</button>
-            <button id="btnaddnewempjob" style="position:relative;left: 1088px;top: 272px;"  type="button" class="btn btn-dark btncreate w-75" >Add New Job</button>
-        </div>
     </section>
 </section>
-<!--Student Feedbacks-->
+<!--Student Acc-->
 <section id="stfeedback" class="newAcc row">
     <section class="row empaccsec">
         <div class="col-4 pt-5 ml-1 col1">
@@ -804,11 +862,11 @@
                 <input class="form-control w-50" id="txtstgender" placeholder="Gender" type="text">
             </div>
         </div>
-        <h2 class="empacch2">FEEDBACKS</h2>
+            <h2 class="empacch2">MY JOBS</h2>
         <section>
-            <div class="col-6 tbldiv" style="bottom: 2rem">
+            <div class="col-6 tbldiv" style="top:100px;">
                 <table class="table  table-hover tbl">
-                    <tbody id="tblstfeedbacks">
+                    <tbody id="tblstjobs">
                     <tr class="bg-info">
                         <td class="tbltxt">Car Cleaner</td>
                         </tr>
@@ -816,16 +874,28 @@
                 </table>
             </div>
         </section>
-        <div class="empaccbtn">
-            <button id="btnchangestpass" style="position:relative;left: 32px;top: 320px;"  type="button" class="btn btn-dark btncreate w-75" >Change Password</button>
-            <button id="btnaddnewstjob" style="position:relative;left: 1088px;top: 272px;"  type="button" class="btn btn-dark btncreate w-75" >Add New Job</button>
-        </div>
     </section>
 </section>
 <!--Alert Btn-->
 <div class="alert w-25" id="alert" style="display: none">
     <h5 id="text"></h5>
     <span class="closebtn " style="cursor: pointer;" onclick="this.parentElement.style.display='none';">&times;</span>
+</div>
+<!--Confiremations-->
+<div class="modal fade" id="deletejob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="job" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="job">Are u Sure to Delete?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button id="btncancelconfirm" type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">CANCEL</button>
+                <button id="btndeleteconfirm" type="button" class="btn btn-danger" data-bs-dismiss="modal">DELETE</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
@@ -908,10 +978,13 @@
     $("#btncreate").click(function () {
      /*Success the new St Account*/
         $("#nav").css("display", "none");
-        $("#dashboard").css("display", "block");
+        $("#qr").css("display", "flex");
         $("#newstacc").css("display", "none");
-        success();
 
+
+    });
+    $("#btnhome").click(function () {
+        logout();
     });
     $("#btncreatenewemployee").click(function () {
         /*Success the new Emp Account*/
@@ -927,29 +1000,127 @@
 
     });
     /*Login Button*/
-    $("#loginbtn").click(function () {
+    $("#loginempbtn").click(function () {
         $("#login").css("display", "none");
         $("#nav").css("display", "none");
         $("#logednav").css("display", "block");
         $("#logeddashboard").css("display", "flex");
     });
+    $("#loginbtn").click(function () {
+        $("#login").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logedstnav").css("display", "block");
+        $("#logeddashboardst").css("display", "flex");
+    });
+    $("#logoutst").click(function () {
+        logout();
+    });
+
     $("#logout").click(function () {
        /* $("#dashboard").css("display", "block");
         $("#nav").css("display", "none");
         $("#logednav").css("display", "none");
         $("#logeddashboard").css("display", "none");*/
         logout();
-    });
-    $("#navhome").click(function () {
-        // $("#dashboard").css("display", "block");
+    });/*nav*/
+    $("#navstuacc").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logedstnav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
         $("#logeddashboard").css("display", "none");
-    });/*nav*/
-    $("#navmyacc").click(function () {
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "none");
+        $("#stfeedback").css("display", "block");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logednav").css("display", "none");
+    });
+    $("#navempacc").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logednav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "block");
+        $("#stfeedback").css("display", "none");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logedstnav").css("display", "none");
 
     });
-    $("#navmenu").click(function () {
 
+    $("#navmenu").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logednav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboard").css("display", "flex");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "none");
+        $("#stfeedback").css("display", "none");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logedstnav").css("display", "none");
     });/*nav*/
+    $("#navmenust").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logedstnav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboardst").css("display", "flex");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "none");
+        $("#stfeedback").css("display", "none");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        $("#logednav").css("display", "none");
+    });
 
     $("#addajob").click(function () {
         $("#logeddashboard").css("display", "none");
@@ -963,6 +1134,51 @@
     $("#removeajob").click(function () {
         $("#logeddashboard").css("display", "none");
         $("#updatedeletejobmain").css("display", "block");
+    });
+    $("#changeemppassword").click(function () {
+        $("#logeddashboard").css("display", "none");
+        $("#changeemployeepassword").css("display", "block");
+    });
+    $("#scanstqr").click(function () {
+        $("#logeddashboardst").css("display", "none");
+        $("#scanqr").css("display", "flex");
+    });
+
+    $("#btndeleteconfirm").click(function () {
+        /*Delete job*/
+    });
+    $("#btnupdate").click(function () {
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "flex");
+    });
+    $("#btnupdatejob").click(function () {
+        success();
+    });
+    $("#btnfeedback").click(function () {
+        success();
+    });
+    $("#btnupdatepass").click(function () {
+        success();
+    });
+    $("#btnupdateemppass").click(function () {
+        success();
+    });
+    $("#changestpassword").click(function () {
+        $("#changepassword").css("display", "block");
+        $("#logeddashboardst").css("display", "none");
+    });
+    $("#findajob").click(function () {
+        $("#filterjob").css("display", "flex");
+        $("#logeddashboardst").css("display", "none");
+    });
+    $("#btnapplyjob").click(function () {
+        $("#filterjob").css("display", "block");
+        // $("# ").css("display", "block");
+        success();
+    });
+    $("#giveafeedback").click(function () {
+        $("#feedback").css("display", "flex");
+        $("#logeddashboardst").css("display", "none");
     });
 
 
@@ -986,6 +1202,9 @@
         $("#changepassword").css("display", "none");
         $("#empacc").css("display", "none");
         $("#stfeedback").css("display", "none");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logedstnav").css("display", "none");
     }
     function error(){
         $("#alert").css("display","block");
@@ -996,6 +1215,7 @@
     function success(){
         $("#alert").css("display","block");
         $("#alert").css("position","absolute");
+        $("#alert").css("bottom","80vh");
         $("#alert").css("backgroundColor","#00b894");
         document.getElementById("text").innerText="Success!";
     }
