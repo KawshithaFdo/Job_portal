@@ -12,7 +12,7 @@ connection.connect(function (err) {
         console.log(err);
     } else {
         console.log('Connected to the MySQL server(Admin)');
-        var adminTableQuery = "CREATE TABLE IF NOT EXISTS Admin (name VARCHAR(255) PRIMARY KEY, password VARCHAR(255))"
+        var adminTableQuery = "CREATE TABLE IF NOT EXISTS Admin (Admin_id VARCHAR(255) PRIMARY KEY,`name` VARCHAR(255), password VARCHAR(255))"
         connection.query(adminTableQuery, function (err, result) {
             if (result.warningCount === 0) {
                 console.log("Admin table created!");
@@ -46,8 +46,27 @@ router.delete('/:username', (req, res) => {
 })
 
 // Get Using ID
-router.get('/:username/:password', (req, res) => {
-    res.send("Admin GET")
+router.get('/:id/:password', (req, res) => {
+    const id = req.params.id;
+    const password = req.params.password;
+
+    // console.log(st_id,password);
+
+    var query = "SELECT * from Admin WHERE Admin_id=? AND password=? ";
+
+
+    connection.query(query, [id,password], (err, result) => {
+
+        if (err) console.log(err);
+
+        if (result.length==0){
+            // console.log("Empty")
+            res.sendStatus(400);
+        }else{
+            // console.log("Not Empty")
+            res.json(result);
+        }
+    })
 })
 
 module.exports = router

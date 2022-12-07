@@ -55,10 +55,27 @@
             <input class="form-control w-50" style="margin-left: 48px;" id="txtloginPassword" placeholder="Password" type="password">
         </div>
         <div >
-            <button id="loginbtn" type="button" style="top: 130px;left: 200px" class="btn button w-25">Student Log In</button>
-            <button id="loginempbtn" type="button" style="top: 130px;left: 200px" class="btn button w-25">Employee Log In</button>
+            <button id="loginbtn" type="button" style="top: 130px;left: 100px" class="btn button w-25">Student</button>
+            <button id="loginempbtn" type="button" style="top: 130px;left: 100px" class="btn button w-25">Employee</button>
+            <button id="loginadminbtn" type="button" style="top: 130px;left: 100px" class="btn button w-25">Admin</button>
         </div>
     </form>
+</section>
+<!--Admin Login-->
+<section id="adminform" class="newAcc row">
+    <button class="btn-dark " id="btnadminlogout" style="position: relative;width: 5%;border-radius: 15px">Back</button>
+    <section>
+        <div class="col-6 tbldiv">
+            <table class="table  table-hover tbl">
+                <tbody id="tbldeletejobs">
+                <tr class="bg-info">
+                    <td class="tbltxt">Car Cleaner</td>
+                    <td><button class="text-white bg-danger" id="btndeletejob" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </section>
 <!--Student New Acc-->
 <section id="newstacc" class="newAcc row">
@@ -71,6 +88,10 @@
         </div>
     </nav>
     <div class="col-6 pt-5 ml-1 col1">
+        <div class="mb-3">
+            <label class="form-label" for="txtstid">ST_ID :</label>
+            <input class="form-control w-50" id="txtstid" placeholder="St_ID" type="text">
+        </div>
         <div class="mb-3">
             <label class="form-label" for="txtname">NAME :</label>
             <input class="form-control w-50" id="txtname" placeholder="Name" type="text">
@@ -131,6 +152,10 @@
     </nav>
     <div class="col-6 pt-5 ml-1 col1">
         <div class="mb-3">
+            <label class="form-label" for="txtempid">ID :</label>
+            <input class="form-control w-50" id="txtempid" placeholder="ID" type="text">
+        </div>
+        <div class="mb-3">
             <label class="form-label" for="txtempname">NAME :</label>
             <input class="form-control w-50" id="txtempname" placeholder="Name" type="text">
         </div>
@@ -153,8 +178,8 @@
     </div>
     <div class="col-6 pt-5 col1">
         <div class="mb-3">
-            <label class="form-label" for="txtemppassion">PASSION :</label>
-            <input class="form-control w-50" id="txtemppassion" placeholder="Passion" type="text">
+            <label class="form-label" for="txtemppassion">POSITION :</label>
+            <input class="form-control w-50" id="txtemppassion" placeholder="Position" type="text">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtempemail">E-MAIL :</label>
@@ -190,7 +215,7 @@
 <section id="logeddashboard" class="newAcc row">
     <div class="row">
         <div class="margin">
-            <h1>PLEASE SELECT A OPTION BELOW</h1>
+            <h1>PLEASE SELECT AN OPTION BELOW</h1>
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="addajob" style="width: 240px">ADD A JOB</button>
@@ -216,7 +241,7 @@
 <section id="logeddashboardst" class="newAcc row">
     <div class="row">
         <div class="margin">
-            <h1>PLEASE SELECT A OPTION BELOW</h1>
+            <h1>PLEASE SELECT AN OPTION BELOW</h1>
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="findajob" style="width: 240px">APPLY A JOB</button>
@@ -234,6 +259,10 @@
             <input class="form-control w-50" id="txtcompanyname" placeholder="Company name" type="text">
         </div>
         <div class="mb-2">
+            <label class="form-label" for="txtjobid">JOB ID :</label>
+            <input class="form-control w-50" id="txtjobid" placeholder="Job ID" type="text">
+        </div>
+        <div class="mb-2">
             <label class="form-label" for="txtjobtitle">JOB TITLE :</label>
             <input class="form-control w-50" id="txtjobtitle" placeholder="Job title" type="text">
         </div>
@@ -243,25 +272,25 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtjobtime">JOB TIME : </label>
-            <input class="form-control w-50" id="txtjobtime" placeholder="Job Time" type="password">
+            <input class="form-control w-50" id="txtjobtime" placeholder="Job Time" type="text">
         </div>
+    </div>
+    <div class="col-6 pt-5 col1">
         <div class="mb-3">
             <label class="form-label" for="txtjobsalary">SALARY RATE :</label>
             <input class="form-control w-50" id="txtjobsalary" placeholder="Salary Rate" type="text">
         </div>
-    </div>
-    <div class="col-6 pt-5 col1">
         <div class="mb-3">
             <label class="form-label" for="txtjobgender">REQUIRED GENDER : </label>
             <input class="form-control  w-50" id="txtjobgender" placeholder="Gender" type="text">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtjobskills">REQUIRED SKILLS : </label>
-            <input class="form-control w-50" id="txtjobskills" placeholder="Required Skills" type="password">
+            <input class="form-control w-50" id="txtjobskills" placeholder="Required Skills" type="text">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtaboutjob">ABOUT JOB : </label>
-            <input class="form-control w-50" id="txtaboutjob" placeholder="About" type="password">
+            <input class="form-control w-50" id="txtaboutjob" placeholder="About" type="text">
         </div>
         <div class="mb-3">
             <button id="btnaddjob" type="button" class="btn btn-primary btncreate w-50" >ADD A JOB</button>
@@ -289,7 +318,6 @@
                 <tbody id="tbljobs">
                 <tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
-<!--                    <td><button class="text-white bg-primary" id="btnnew" style="border-radius: 15px;width:112px">NEW</button></td>-->
                     <td><button class="text-white bg-primary" id="btnupdate" style="border-radius: 15px;width:112px">UPDATE</button></td>
                     <td><button class="text-white bg-danger" id="btndelete" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td>
                 </tr>
@@ -649,8 +677,8 @@
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
     /*-------------------Validate Login--------------------------------------------*/
-    const UserPasswordRegEx = /^[A-z0-9 ]{3,}$/;
-    const UserNameRegEx = /^[A-z0-9 ]{3,}$/;
+    const UserPasswordRegEx =/^[A-z0-9 ]{3,}$/;
+    const UserNameRegEx =/^[A]?[S]?[E]?[-][0-9]{3,}$/;
     $('#txtloginUserid,#txtloginPassword').on('keydown', function (eventOb) {
         if (eventOb.key == "Tab") {
             eventOb.preventDefault();
@@ -724,9 +752,34 @@
     });
     $("#btncreate").click(function () {
      /*Success the new St Account*/
-        $("#nav").css("display", "none");
-        $("#qr").css("display", "flex");
-        $("#newstacc").css("display", "none");
+        var userOb={
+            st_id: $("#txtstid").val(),
+            studentname: $("#txtname").val(),
+            location: $("#txtlocation").val(),
+            dateofbirth: $("#txtdob").val(),
+            nic: $("#txtnic").val(),
+            contact:$("#txtcontact").val(),
+            gender: $("#txtgender").val(),
+            email: $("#txtemail").val(),
+            univercity:$("#txtunivercity").val(),
+            skills: $("#txtskills").val(),
+            password: $("#txtpassword").val()
+
+        }
+        $.ajax({
+            url: "http://localhost:5000/student",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(userOb),
+            success: function (res) {
+                clearuser();
+                success();
+                logout();
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
 
 
     });
@@ -735,10 +788,34 @@
     });
     $("#btncreatenewemployee").click(function () {
         /*Success the new Emp Account*/
-        $("#nav").css("display", "none");
-        $("#dashboard").css("display", "block");
-        $("#newempacc").css("display", "none");
-        success();
+        var empOb={
+            id: $("#txtempid").val(),
+            name: $("#txtempname").val(),
+            nic: $("#txtempnic").val(),
+            companyname: $("#txtempcompany").val(),
+            contact: $("#txtempcontact").val(),
+            address:$("#txtempaddress").val(),
+            gender: $("#txtempgender").val(),
+            email: $("#txtempemail").val(),
+            jobposition:$("#txtemppassion").val(),
+            password: $("#txtemppassword").val()
+        }
+        $.ajax({
+            url: "http://localhost:5000/jobposter",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(empOb),
+            success: function (res) {
+                console.log(empOb.companyname);
+                clearemp();
+                success();
+                logout();
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
+
 
     });
     $("#empsignin").click(function () {
@@ -748,79 +825,178 @@
     });
     /*Login Button*/
     $("#loginempbtn").click(function () {
-        $("#login").css("display", "none");
-        $("#nav").css("display", "none");
-        $("#logednav").css("display", "block");
-        $("#logeddashboard").css("display", "flex");
+        let id = $("#txtloginUserid").val();
+        let password=$("#txtloginPassword").val();
+        logedemp_Id=id;
+
+        $.ajax({
+            url: "http://localhost:5000/jobposter/"+id+"/"+password,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                if (res != {}){
+                    console.log(res);
+                    $("#login").css("display", "none");
+                    $("#nav").css("display", "none");
+                    $("#logednav").css("display", "block");
+                    $("#logeddashboard").css("display", "flex");
+                    $("#txtloginUserid").val("");
+                    $("#txtloginPassword").val("");
+                }else{
+                    console.log("Not Equal");
+                    /*$("#txtloginUserid").val("");
+                    $("#txtloginPassword").val("");
+                    window.alert("Please Enter Valid Password");*/
+                }
+
+            },
+            error: function (ob, errorStus) {
+                error();
+                $("#alert").css("bottom","40rem");
+                $("#txtloginUserid").val("");
+                $("#txtloginPassword").val("");
+            }
+        });
+
     });
+    let logedst_Id=0;
+    let logedemp_Id=0;
     $("#loginbtn").click(function () {
-        $("#login").css("display", "none");
-        $("#nav").css("display", "none");
-        $("#logedstnav").css("display", "block");
-        $("#logeddashboardst").css("display", "flex");
+        /*Student Login*/
+        let id = $("#txtloginUserid").val();
+        let password=$("#txtloginPassword").val();
+        logedst_Id=id;
+
+        $.ajax({
+            url: "http://localhost:5000/student/"+id+"/"+password,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                     if (res != {}){
+                        // console.log(res);
+                        $("#login").css("display", "none");
+                        $("#nav").css("display", "none");
+                        $("#logedstnav").css("display", "block");
+                        $("#logeddashboardst").css("display", "flex");
+                        $("#txtloginUserid").val("");
+                        $("#txtloginPassword").val("");
+                        id=0;
+                     }else{
+                        console.log("Not Equal");
+                        /*$("#txtloginUserid").val("");
+                        $("#txtloginPassword").val("");
+                        window.alert("Please Enter Valid Password");*/
+                     }
+
+            },
+            error: function (ob, errorStus) {
+                error();
+                 $("#alert").css("bottom","40rem");
+                $("#txtloginUserid").val("");
+                $("#txtloginPassword").val("");
+            }
+        });
+
+    });
+    $("#loginadminbtn").click(function () {
+        let id = $("#txtloginUserid").val();
+        let password=$("#txtloginPassword").val();
+
+        $.ajax({
+            url: "http://localhost:5000/admin/"+id+"/"+password,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                if (res != {}){
+                    console.log(res);
+                    $("#login").css("display", "none");
+                    $("#nav").css("display", "block");
+                    $("#adminform").css("display", "block");
+                    $("#txtloginUserid").val("");
+                    $("#txtloginPassword").val("");
+                }else{
+                    console.log("Not Equal");
+                    /*$("#txtloginUserid").val("");
+                    $("#txtloginPassword").val("");
+                    window.alert("Please Enter Valid Password");*/
+                }
+
+            },
+            error: function (ob, errorStus) {
+                error();
+                $("#alert").css("bottom","40rem");
+                $("#txtloginUserid").val("");
+                $("#txtloginPassword").val("");
+            }
+        });
+
     });
     $("#logoutst").click(function () {
+        logout();
+        logedst_Id=0;
+    });
+
+    $("#btnadminlogout").click(function () {
         logout();
     });
 
     $("#logout").click(function () {
-       /* $("#dashboard").css("display", "block");
-        $("#nav").css("display", "none");
-        $("#logednav").css("display", "none");
-        $("#logeddashboard").css("display", "none");*/
         logout();
+        logedemp_Id=0;
     });/*nav*/
+
     $("#navstuacc").click(function () {
-        $("#dashboard").css("display", "none");
-        $("#nav").css("display", "none");
-        $("#logedstnav").css("display", "block");
-        $("#login").css("display", "none");
-        $("#newstacc").css("display", "none");
-        $("#newempacc").css("display", "none");
-        $("#logeddashboard").css("display", "none");
-        $("#addjob").css("display", "none");
-        $("#congrades").css("display", "none");
-        $("#updatedeletejobmain").css("display", "none");
-        $("#updatejob").css("display", "none");
-        $("#filterjob").css("display", "none");
-        $("#qr").css("display", "none");
-        $("#feedback").css("display", "none");
-        $("#scanqr").css("display", "none");
-        $("#enterqr").css("display", "none");
-        $("#changepassword").css("display", "none");
-        $("#empacc").css("display", "none");
-        $("#stfeedback").css("display", "block");
-        $("#changeemployeepassword").css("display", "none");
-        $("#logeddashboardst").css("display", "none");
-        $("#logednav").css("display", "none");
+        /*Student Account*/
+        $.ajax({
+            url: "http://localhost:5000/student/"+logedst_Id,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res[0]);
+                stuAcc();
+                $("#txtstname").val(res[0].student_name);
+                $("#txtstnic").val(res[0].nic);
+                $("#txtstdob").val(res[0].dateofbirth);
+                $("#txtstcontact").val(res[0].contact);
+                $("#txtstunivercity").val(res[0].univercity);
+                $("#txtstlocation").val(res[0].location);
+                $("#txtstemail").val(res[0].email);
+                $("#txtstgender").val(res[0].gender);
+            },
+            error: function (ob, errorStus) {
+                error();
+
+            }
+        });
     });
     $("#navempacc").click(function () {
-        $("#dashboard").css("display", "none");
-        $("#nav").css("display", "none");
-        $("#logednav").css("display", "block");
-        $("#login").css("display", "none");
-        $("#newstacc").css("display", "none");
-        $("#newempacc").css("display", "none");
-        $("#logeddashboard").css("display", "none");
-        $("#addjob").css("display", "none");
-        $("#congrades").css("display", "none");
-        $("#updatedeletejobmain").css("display", "none");
-        $("#updatejob").css("display", "none");
-        $("#filterjob").css("display", "none");
-        $("#qr").css("display", "none");
-        $("#feedback").css("display", "none");
-        $("#scanqr").css("display", "none");
-        $("#enterqr").css("display", "none");
-        $("#changepassword").css("display", "none");
-        $("#empacc").css("display", "block");
-        $("#stfeedback").css("display", "none");
-        $("#changeemployeepassword").css("display", "none");
-        $("#logeddashboardst").css("display", "none");
-        $("#logedstnav").css("display", "none");
+        /*Emp Acc*/
+        $.ajax({
+            url: "http://localhost:5000/jobposter/"+logedemp_Id,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res[0]);
+                $("#txtempaccname").val(res[0].name);
+                $("#txtempaccnic").val(res[0].nic);
+                $("#txtempacccompany").val(res[0].companyname);
+                $("#txtempacccontact").val(res[0].contact);
+                $("#txtempaccaddress").val(res[0].address);
+                $("#txtempaccposition").val(res[0].jobposition);
+                $("#txtempaccemail").val(res[0].email);
+                $("#txtempaccgender").val(res[0].gender);
+            },
+            error: function (ob, errorStus) {
+                error();
 
+            }
+        });
+
+        empAcc();
     });
 
     $("#navmenu").click(function () {
+        $("#adminform").css("display", "none");
         $("#dashboard").css("display", "none");
         $("#nav").css("display", "none");
         $("#logednav").css("display", "block");
@@ -845,6 +1021,7 @@
         $("#logedstnav").css("display", "none");
     });/*nav*/
     $("#navmenust").click(function () {
+        $("#adminform").css("display", "none");
         $("#dashboard").css("display", "none");
         $("#nav").css("display", "none");
         $("#logedstnav").css("display", "block");
@@ -874,8 +1051,33 @@
         $("#addjob").css("display", "flex");
     });
     $("#btnaddjob").click(function () {
-        $("#congrades").css("display", "block");
-        $("#addjob").css("display", "none");
+        var userOb={
+            job_id: $("#txtjobid").val(),
+            company_name: $("#txtcompanyname").val(),
+            job_title: $("#txtjobtitle").val(),
+            location: $("#txtjoblocation").val(),
+            job_time: $("#txtjobtime").val(),
+            salaryRate: $("#txtjobsalary").val(),
+            gender:$("#txtjobgender").val(),
+            skills: $("#txtjobskills").val(),
+            about: $("#txtaboutjob").val()
+        }
+        $.ajax({
+            url: "http://localhost:5000/job",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(userOb),
+            success: function (res) {
+                // clearuser();
+                success();
+                clearjob();
+                $("#congrades").css("display", "block");
+                $("#addjob").css("display", "none");
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     });
 
     $("#removeajob").click(function () {
@@ -905,9 +1107,100 @@
         success();
     });
     $("#btnupdatepass").click(function () {
+
+        $.ajax({
+            url: "http://localhost:5000/student/"+logedst_Id,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res[0]);
+                var userOb={
+                    st_id: $("#txtcurrentuserid").val(),
+                    student_name:res[0].student_name,
+                    location:res[0].location,
+                    dateofbirth: res[0].dateofbirth,
+                    nic:res[0].nic,
+                    contact:res[0].contact,
+                    gender:res[0].gender,
+                    email:res[0].email,
+                    univercity:res[0].univercity,
+                    skills:res[0].skills,
+                    password: $("#txtconfirmpass").val()
+                }
+
+                 $.ajax({
+                        url: "http://localhost:5000/student/",
+                        method: "PUT",
+                        contentType: "application/json",
+                        data: JSON.stringify(userOb),
+                        success: function (res) {
+                                success();
+                            $("#txtcurrentuserid").val("");
+                            $("#txtcurrentpass").val("");
+                            $("#txtnewpass").val("");
+                            $("#txtconfirmpass").val("");
+                        },
+                        error: function (ob, errorStus) {
+                            error();
+                        }
+                    });
+
+
+            },
+            error: function (ob, errorStus) {
+                error();
+
+            }
+        });
+
+
+
         success();
     });
     $("#btnupdateemppass").click(function () {
+        $.ajax({
+            url: "http://localhost:5000/jobposter/"+logedemp_Id,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res[0]);
+                var empOb={
+                    id: $("#txtcurrentid").val(),
+                    name: res[0].name,
+                    nic: res[0].nic,
+                    company_name: res[0].companyname,
+                    contact: res[0].contact,
+                    address:res[0].address,
+                    gender: res[0].gender,
+                    email: res[0].email,
+                    jobposition:res[0].jobposition,
+                    password: $("#txtconfirmemppass").val()
+                }
+
+                $.ajax({
+                    url: "http://localhost:5000/jobposter/",
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(empOb),
+                    success: function (res) {
+                        success();
+                        $("#txtcurrentid").val("");
+                        $("#txtcurrentemppass").val("");
+                        $("#txtnewemppass").val("");
+                        $("#txtconfirmemppass").val("");
+                    },
+                    error: function (ob, errorStus) {
+                        error();
+                    }
+                });
+
+
+            },
+            error: function (ob, errorStus) {
+                error();
+
+            }
+        });
         success();
     });
     $("#changestpassword").click(function () {
@@ -928,8 +1221,8 @@
         $("#logeddashboardst").css("display", "none");
     });
 
-
     function logout() {
+        $("#adminform").css("display", "none");
         $("#dashboard").css("display", "block");
         $("#nav").css("display", "none");
         $("#logednav").css("display", "none");
@@ -965,6 +1258,94 @@
         $("#alert").css("bottom","80vh");
         $("#alert").css("backgroundColor","#00b894");
         document.getElementById("text").innerText="Success!";
+    }
+
+    function clearuser(){
+        $("#txtstid").val("");
+        $("#txtname").val("");
+        $("#txtlocation").val("");
+        $("#txtdob").val("");
+        $("#txtnic").val("");
+        $("#txtcontact").val("");
+        $("#txtgender").val("");
+        $("#txtemail").val("");
+        $("#txtunivercity").val("");
+        $("#txtskills").val("");
+        $("#txtpassword").val("");
+    }
+    function clearjob(){
+        $("#txtjobid").val("");
+        $("#txtcompanyname").val("");
+        $("#txtjobtitle").val("");
+        $("#txtjoblocation").val("");
+        $("#txtjobtime").val("");
+        $("#txtjobsalary").val("");
+        $("#txtjobgender").val("");
+        $("#txtjobskills").val("");
+        $("#txtaboutjob").val("");
+    }
+    function clearemp(){
+        $("#txtempid").val("");
+        $("#txtempname").val("");
+        $("#txtempnic").val("");
+        $("#txtempcompany").val("");
+        $("#txtempcontact").val("");
+        $("#txtempaddress").val("");
+        $("#txtempgender").val("");
+        $("#txtempemail").val("");
+        $("#txtemppassion").val("");
+        $("#txtemppassword").val("");
+    }
+
+    function stuAcc(){
+        $("#adminform").css("display", "none");
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logedstnav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "none");
+        $("#stfeedback").css("display", "block");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logednav").css("display", "none");
+    }
+    function empAcc(){
+        $("#adminform").css("display", "none");
+        $("#dashboard").css("display", "none");
+        $("#nav").css("display", "none");
+        $("#logednav").css("display", "block");
+        $("#login").css("display", "none");
+        $("#newstacc").css("display", "none");
+        $("#newempacc").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        $("#addjob").css("display", "none");
+        $("#congrades").css("display", "none");
+        $("#updatedeletejobmain").css("display", "none");
+        $("#updatejob").css("display", "none");
+        $("#filterjob").css("display", "none");
+        $("#qr").css("display", "none");
+        $("#feedback").css("display", "none");
+        $("#scanqr").css("display", "none");
+        $("#enterqr").css("display", "none");
+        $("#changepassword").css("display", "none");
+        $("#empacc").css("display", "block");
+        $("#stfeedback").css("display", "none");
+        $("#changeemployeepassword").css("display", "none");
+        $("#logeddashboardst").css("display", "none");
+        $("#logedstnav").css("display", "none");
     }
 
 

@@ -12,7 +12,7 @@ connection.connect(function (err) {
         console.log(err);
     } else {
         console.log('Connected to the MySQL server(Job)');
-        var JobTableQuery = "CREATE TABLE IF NOT EXISTS job (company_name VARCHAR(255) PRIMARY KEY, job_title VARCHAR(255),location VARCHAR(255), job_time VARCHAR (255), salaryRate VARCHAR(255), gender VARCHAR(255))"
+        var JobTableQuery = "CREATE TABLE IF NOT EXISTS job (job_id VARCHAR(255) PRIMARY KEY,company_name VARCHAR(255) , job_title VARCHAR(255),location VARCHAR(255), job_time VARCHAR (255), salaryRate VARCHAR(255), gender VARCHAR(255), skills VARCHAR(255), about VARCHAR(255))"
         connection.query(JobTableQuery, function (err, result) {
             if (result.warningCount === 0) {
                 console.log("Job table created!");
@@ -32,20 +32,23 @@ router.get('/', (req, res) => {
 
 // Add
 router.post('/', (req, res) => {
+    const job_id = req.body.job_id
     const company_name = req.body.company_name
     const job_title = req.body.job_title
     const location = req.body.location
     const job_time=req.body.job_time
     const salaryRate=req.body.salaryRate
     const gender = req.body.gender
+    const skills=req.body.skills
+    const about = req.body.about
 
 
     // console.log(username,address,contact,password);
 
 
-    var query = "INSERT INTO job (company_name,job_title,location,job_time,salaryRate,gender) VALUES (?, ?, ?, ?, ?, ?)";
+    var query = "INSERT INTO job (job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    connection.query(query, [company_name,job_title,location,job_time,salaryRate,gender], (err) => {
+    connection.query(query, [job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about], (err) => {
         if (err) {
             res.send({ 'message': 'Duplicate Entry' })
         } else {
@@ -57,17 +60,20 @@ router.post('/', (req, res) => {
 
 // Update
 router.put('/', (req, res) => {
+    const job_id = req.body.job_id
     const company_name = req.body.company_name
     const job_title = req.body.job_title
     const location = req.body.location
     const job_time=req.body.job_time
     const salaryRate=req.body.salaryRate
     const gender = req.body.gender
+    const skills=req.body.skills
+    const about = req.body.about
 
 
-    var query = "UPDATE job SET job_title=?, location=?, job_time=?, salaryRate=?, gender=? WHERE company_name=?";
+    var query = "UPDATE job SET company_name=?, job_title=?, location=?, job_time=?, salaryRate=?, gender=?, skills=? ,about=? WHERE job_id=?";
 
-    connection.query(query, [job_title,location,job_time,salaryRate,gender,company_name], (err, result) => {
+    connection.query(query, [company_name,job_title,location,job_time,salaryRate,gender,skills,about,job_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -79,12 +85,12 @@ router.put('/', (req, res) => {
 })
 
 // Delete Using ID
-router.delete('/:company_name', (req, res) => {
-    const company_name = req.params.company_name
+router.delete('/:job_id', (req, res) => {
+    const job_id = req.params.job_id
 
-    var query = "DELETE FROM job WHERE company_name=?";
+    var query = "DELETE FROM job WHERE job_id=?";
 
-    connection.query(query, [company_name], (err, result) => {
+    connection.query(query, [job_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -96,12 +102,12 @@ router.delete('/:company_name', (req, res) => {
 })
 
 // Get Using ID
-router.get('/:company_name', (req, res) => {
-    const company_name = req.params.company_name
+router.get('/:job_id', (req, res) => {
+    const job_id = req.params.job_id
 
-    var query = "SELECT * from job WHERE company_name=? ";
+    var query = "SELECT * from job WHERE job_id=? ";
 
-    connection.query(query, [nic], (err, result) => {
+    connection.query(query, [job_id], (err, result) => {
 
         if(result.affectedRows > 0){
             res.status(200).json({ 'message': 'ok' })

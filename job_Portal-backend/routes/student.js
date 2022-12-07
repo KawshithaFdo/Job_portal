@@ -12,7 +12,7 @@ connection.connect(function (err) {
         console.log(err);
     } else {
         console.log('Connected to the MySQL server(Student)');
-        var stTableQuery = "CREATE TABLE IF NOT EXISTS Student (student_name VARCHAR(255) ,location VARCHAR(255),dateofbirth VARCHAR(255), nic VARCHAR(255) PRIMARY KEY, contact VARCHAR(255), gender VARCHAR (255), email VARCHAR(255), univercity VARCHAR(255),skills VARCHAR(255), password VARCHAR(255))"
+        var stTableQuery = "CREATE TABLE IF NOT EXISTS Student (st_id VARCHAR(255) PRIMARY KEY,student_name VARCHAR(255) ,location VARCHAR(255),dateofbirth VARCHAR(255), nic VARCHAR(255) , contact VARCHAR(255), gender VARCHAR (255), email VARCHAR(255), univercity VARCHAR(255),skills VARCHAR(255), password VARCHAR(255));"
         connection.query(stTableQuery, function (err, result) {
             if (result.warningCount === 0) {
                 console.log("Student table created!");
@@ -32,7 +32,8 @@ router.get('/', (req, res) => {
 
 // Add
 router.post('/', (req, res) => {
-    const student_name = req.body.student_name
+    const st_id = req.body.st_id
+    const student_name = req.body.studentname
     const location = req.body.location
     const dateofbirth = req.body.dateofbirth
     const nic = req.body.nic
@@ -46,13 +47,13 @@ router.post('/', (req, res) => {
     // console.log(username,address,contact,password);
 
 
-    var query = "INSERT INTO Student (student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ,? ,?)";
+    var query = "INSERT INTO Student (st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    connection.query(query, [student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password], (err) => {
+    connection.query(query, [st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password], (err) => {
         if (err) {
             res.send({ 'message': 'Duplicate Entry' })
         } else {
-            res.send({ 'message': 'Student Saved Successfully!' })
+            res.send({ 'message': 'Student Saved Successfully!'})
         }
     })
 
@@ -60,6 +61,7 @@ router.post('/', (req, res) => {
 
 // Update
 router.put('/', (req, res) => {
+    const st_id = req.body.st_id
     const student_name = req.body.student_name
     const location = req.body.location
     const dateofbirth = req.body.dateofbirth
@@ -72,9 +74,9 @@ router.put('/', (req, res) => {
     const password=req.body.password
 
 
-    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, contact=?, gender=?, email=?, univercity=?,skills, password=? WHERE nic=?";
+    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, nic=?, contact=?, gender=?, email=?, univercity=?, skills=?, password=? WHERE st_id=?";
 
-    connection.query(query, [student_name,location,dateofbirth,contact,gender,email,univercity,skills,password,nic], (err, result) => {
+    connection.query(query, [student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password,st_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -86,12 +88,12 @@ router.put('/', (req, res) => {
 })
 
 // Delete Using ID
-router.delete('/:nic', (req, res) => {
-    const nic = req.params.nic
+router.delete('/:st_id', (req, res) => {
+    const st_id = req.params.st_id
 
-    var query = "DELETE FROM Student WHERE nic=?";
+    var query = "DELETE FROM Student WHERE st_id=?";
 
-    connection.query(query, [nic], (err, result) => {
+    connection.query(query, [st_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -103,20 +105,43 @@ router.delete('/:nic', (req, res) => {
 })
 
 // Get Using ID
-router.get('/:nic/:password', (req, res) => {
-    const nic = req.params.nic
-    const password = req.params.password
+router.get('/:st_id/:password', (req, res) => {
+    const st_id = req.params.st_id;
+    const password = req.params.password;
 
-    var query = "SELECT * from Student WHERE nic=? ";
+    // console.log(st_id,password);
 
-    connection.query(query, [nic], (err, result) => {
-        if(err) {res.status(400).send('Error');}
+    var query = "SELECT * from Student WHERE st_id=? AND password=? ";
 
-        if(result[0].password==password){
 
-            res.status(200).json({ 'message': 'ok' })
-        } else {
-            res.status(400).send('Error');
+    connection.query(query, [st_id,password], (err, result) => {
+
+         if (err) console.log(err);
+
+         if (result.length==0){
+             // console.log("Empty")
+              res.sendStatus(400);
+         }else{
+             // console.log("Not Empty")
+             res.json(result);
+         }
+    })
+})
+
+// Get Using ID
+router.get('/:st_id', (req, res) => {
+    const st_id = req.params.st_id;
+
+    var query = "SELECT * from Student WHERE st_id=? ";
+
+    connection.query(query, [st_id], (err, result) => {
+
+        if (err) console.log(err);
+
+        if (result.length==0){
+            res.sendStatus(400);
+        }else{
+            res.json(result);
         }
     })
 })

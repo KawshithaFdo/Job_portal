@@ -12,9 +12,9 @@ connection.connect(function (err) {
         console.log(err);
     } else {
         console.log('Connected to the MySQL server(Jobposter)');
-        var JobposterTableQuery = "CREATE TABLE IF NOT EXISTS jobposter (name VARCHAR(255) , nic VARCHAR(255) PRIMARY KEY,company_name VARCHAR(255), contact VARCHAR(255),address VARCHAR(255), gender VARCHAR (255), email VARCHAR(255), jobposition VARCHAR(255), password VARCHAR(255))"
+        var JobposterTableQuery = "CREATE TABLE IF NOT EXISTS jobposter (id VARCHAR(255) PRIMARY KEY , name VARCHAR(255) , nic VARCHAR(255) ,company_name VARCHAR(255), contact VARCHAR(255),address VARCHAR(255), gender VARCHAR (255), email VARCHAR(255), jobposition VARCHAR(255), password VARCHAR(255))"
         connection.query(JobposterTableQuery, function (err, result) {
-            if (result.warningCount === 0) {
+            if (!result.warningCount === 0) {
                 console.log("Jobposter table created!");
             }
         })
@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
 
 // Add
 router.post('/', (req, res) => {
+    const id = req.body.id
     const name = req.body.name
     const nic = req.body.nic
     const company_name = req.body.companyname
@@ -42,12 +43,10 @@ router.post('/', (req, res) => {
     const jobposition = req.body.jobposition
     const password=req.body.password
 
-    // console.log(username,address,contact,password);
 
+    var query = "INSERT INTO jobposter (id,name,nic,company_name,contact,address,gender,email,jobposition,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    var query = "INSERT INTO jobposter (name,nic,company_name,contact,address,gender,email,jobposition,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    connection.query(query, [name,nic,company_name,contact,address,gender,email,jobposition,password], (err) => {
+    connection.query(query, [id,name,nic,company_name,contact,address,gender,email,jobposition,password], (err) => {
         if (err) {
             res.send({ 'message': 'Duplicate Entry' })
         } else {
@@ -59,6 +58,7 @@ router.post('/', (req, res) => {
 
 // Update
 router.put('/', (req, res) => {
+    const id = req.body.id
     const name = req.body.name
     const nic = req.body.nic
     const company_name = req.body.companyname
@@ -70,9 +70,9 @@ router.put('/', (req, res) => {
     const password=req.body.password
 
 
-    var query = "UPDATE jobposter SET name=?, company_name=?, contact=?, address=?, gender=?, email=?, jobposition=?, password=? WHERE nic=?";
+    var query = "UPDATE jobposter SET name=?, nic=?, company_name=?, contact=?, address=?, gender=?, email=?, jobposition=?, password=? WHERE id=?";
 
-    connection.query(query, [name,company_name,contact,address,gender,email,jobposition,password,nic], (err, result) => {
+    connection.query(query, [name,nic,company_name,contact,address,gender,email,jobposition,password,id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -84,12 +84,12 @@ router.put('/', (req, res) => {
 })
 
 // Delete Using ID
-router.delete('/:nic', (req, res) => {
-    const nic = req.params.nic
+router.delete('/:id', (req, res) => {
+    const id = req.params.id
 
-    var query = "DELETE FROM jobposter WHERE nic=?";
+    var query = "DELETE FROM jobposter WHERE id=?";
 
-    connection.query(query, [nic], (err, result) => {
+    connection.query(query, [id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -101,22 +101,45 @@ router.delete('/:nic', (req, res) => {
 })
 
 // Get Using ID
-router.get('/:nic/:password', (req, res) => {
-    const nic = req.params.nic
-    const password = req.params.password
+router.get('/:id/:password', (req, res) => {
+    const id = req.params.id;
+    const password = req.params.password;
 
-    var query = "SELECT * from jobposter WHERE nic=? ";
+    // console.log(st_id,password);
 
-    connection.query(query, [nic], (err, result) => {
-        if(err) {res.status(400).send('Error');}
+    var query = "SELECT * from Jobposter WHERE id=? AND password=? ";
 
-        if(result[0].password==password){
 
-            res.status(200).json({ 'message': 'ok' })
-        } else {
-            res.status(400).send('Error');
+    connection.query(query, [id,password], (err, result) => {
+
+        if (err) console.log(err);
+
+        if (result.length==0){
+            // console.log("Empty")
+            res.sendStatus(400);
+        }else{
+            // console.log("Not Empty")
+            res.json(result);
         }
     })
 })
+// Get Using ID
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+
+    var query = "SELECT * from jobposter WHERE id=? ";
+
+    connection.query(query, [id], (err, result) => {
+
+        if (err) console.log(err);
+
+        if (result.length==0){
+            res.sendStatus(400);
+        }else{
+            res.json(result);
+        }
+    })
+})
+
 
 module.exports = router
