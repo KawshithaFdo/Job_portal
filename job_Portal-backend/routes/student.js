@@ -49,11 +49,11 @@ router.post('/', (req, res) => {
 
     var query = "INSERT INTO Student (st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    connection.query(query, [st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password], (err) => {
-        if (result.affectedRows > 0) {
-            res.send({ 'message': 'Student Added' })
-        } else {
+    connection.query(query, [st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password], (err,result) => {
+        if (err) {
             res.sendStatus(400);
+        } else {
+            res.send({ 'message': ' Successfully!' })
         }
     })
 

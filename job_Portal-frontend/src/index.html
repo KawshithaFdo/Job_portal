@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 <!--Home page-->
@@ -368,14 +369,25 @@
             <h2>You are successfully create account.</h2>
             <h2>Here is your Qr code</h2>
         </div>
-        <div class="qrdiv">
+        <div class="qrdiv container-fluid">
+            <div class="text-center">
+
+                <!-- Get a Placeholder image initially,
+                this will change according to the
+                data entered later -->
+                    <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+                         class="qr-code img-thumbnail img-responsive" />
+
+            </div>
+
+
 
         </div>
-        <div>
+        <!--<div>
             <div class="mb-3">
                 <button id="btndownqr" type="button" class="btn btn-primary downqrbtn" >Download</button>
             </div>
-        </div>
+        </div>-->
 
     </section>
 </section>
@@ -756,6 +768,37 @@
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
+    // Function to HTML encode the text
+    // This creates a new hidden element,
+    // inserts the given text into it
+    // and outputs it out as HTML
+    function htmlEncode(value) {
+        return $('<div/>').text(value)
+            .html();
+    }
+
+    $(function () {
+
+        // Specify an onclick function
+        // for the generate button
+        $('#btncreate').click(function () {
+
+            // Generate the link that would be
+            // used to generate the QR Code
+            // with the given data
+            let finalURL =
+                'https://chart.googleapis.com/chart?cht=qr&chl=' +
+                htmlEncode(qrdata) +
+                '&chs=160x160&chld=L|0'
+
+            // Replace the src of the image with
+            // the QR code image
+            $('.qr-code').attr('src', finalURL);
+
+        });
+    });
+</script>
+<script>
     /*-------------------Validate Login--------------------------------------------*/
     const UserPasswordRegEx =/^[A-z0-9 ]{3,}$/;
     const UserNameRegEx =/^[A]?[S]?[E]?[-][0-9]{3,}$/;
@@ -820,6 +863,7 @@
     }
     /*----------------------------------------------------------------------------*/
     logout();
+    var qrdata;
     $("#navlog").click(function () {
         $("#dashboard").css("display", "none");
         $("#nav").css("display", "block");
@@ -846,6 +890,10 @@
             password: $("#txtpassword").val()
 
         }
+
+        qrdata="id-"+$("#txtstid").val()+"/"+"name-"+$("#txtname").val()+"/"+"location-"+$("#txtlocation").val()+"/"+"dob-"+$("#txtdob").val()+"/"+
+            "nic-"+$("#txtnic").val()+"/"+"contact-"+$("#txtcontact").val()+"/"+"gender-"+$("#txtgender").val()+"/"+"email-"+$("#txtemail").val()+"/"+"univercity-"+$("#txtunivercity").val()+"/"+
+            "skill-"+$("#txtskills").val()+"/"+"password-"+$("#txtpassword").val();
         $.ajax({
             url: "http://localhost:5000/student",
             method: "POST",
@@ -853,7 +901,6 @@
             data: JSON.stringify(userOb),
             success: function (res) {
                 clearuser();
-                success();
                 $("#newstacc").css("display", "none");
                 $("#nav").css("display", "none");
                 $("#qr").css("display", "flex");
