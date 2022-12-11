@@ -50,10 +50,10 @@ router.post('/', (req, res) => {
     var query = "INSERT INTO Student (st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     connection.query(query, [st_id,student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password], (err) => {
-        if (err) {
-            res.send({ 'message': 'Duplicate Entry' })
+        if (result.affectedRows > 0) {
+            res.send({ 'message': 'Student Added' })
         } else {
-            res.send({ 'message': 'Student Saved Successfully!'})
+            res.sendStatus(400);
         }
     })
 
@@ -61,8 +61,7 @@ router.post('/', (req, res) => {
 
 // Update
 router.put('/', (req, res) => {
-    const st_id = req.body.st_id
-    const student_name = req.body.student_name
+    const student_name = req.body.studentname
     const location = req.body.location
     const dateofbirth = req.body.dateofbirth
     const nic = req.body.nic
@@ -70,19 +69,17 @@ router.put('/', (req, res) => {
     const gender = req.body.gender
     const email = req.body.email
     const univercity = req.body.univercity
-    const skills = req.body.skills
-    const password=req.body.password
 
 
-    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, nic=?, contact=?, gender=?, email=?, univercity=?, skills=?, password=? WHERE st_id=?";
+    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, contact=?, gender=?, email=?, univercity=? WHERE nic=?";
 
-    connection.query(query, [student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password,st_id], (err, result) => {
+    connection.query(query, [student_name,location,dateofbirth,contact,gender,email,univercity,nic], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
             res.send({ 'message': 'Student updated' })
         } else {
-            res.send({ 'message': 'Student not found' })
+            res.sendStatus(400);
         }
     })
 })

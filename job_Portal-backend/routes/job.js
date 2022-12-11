@@ -41,14 +41,15 @@ router.post('/', (req, res) => {
     const gender = req.body.gender
     const skills=req.body.skills
     const about = req.body.about
+    const id = req.body.id
 
 
     // console.log(username,address,contact,password);
 
 
-    var query = "INSERT INTO job (job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    var query = "INSERT INTO job (job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about,id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    connection.query(query, [job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about], (err) => {
+    connection.query(query, [job_id,company_name,job_title,location,job_time,salaryRate,gender,skills,about,id], (err) => {
         if (err) {
             res.send({ 'message': 'Duplicate Entry' })
         } else {
@@ -69,11 +70,12 @@ router.put('/', (req, res) => {
     const gender = req.body.gender
     const skills=req.body.skills
     const about = req.body.about
+    const id = req.body.id
 
 
-    var query = "UPDATE job SET company_name=?, job_title=?, location=?, job_time=?, salaryRate=?, gender=?, skills=? ,about=? WHERE job_id=?";
+    var query = "UPDATE job SET company_name=?, job_title=?, location=?, job_time=?, salaryRate=?, gender=?, skills=? ,about=? ,id=? WHERE job_id=?";
 
-    connection.query(query, [company_name,job_title,location,job_time,salaryRate,gender,skills,about,job_id], (err, result) => {
+    connection.query(query, [company_name,job_title,location,job_time,salaryRate,gender,skills,about,id,job_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -101,18 +103,36 @@ router.delete('/:job_id', (req, res) => {
     })
 })
 
-// Get Using ID
-router.get('/:job_id', (req, res) => {
+// Get Using ID And Job_ID
+router.get('/:job_id/:id', (req, res) => {
     const job_id = req.params.job_id
+    const id = req.params.id
 
     var query = "SELECT * from job WHERE job_id=? ";
 
     connection.query(query, [job_id], (err, result) => {
 
         if(result.affectedRows > 0){
-            res.status(200).json({ 'message': 'ok' })
+            res.json(result);
         } else {
             res.status(400).send('Error');
+        }
+    })
+})
+
+
+// Get Using ID
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+
+    var query = "SELECT * from job WHERE id=? ";
+
+    connection.query(query, [id], (err, result) => {
+
+        if (result.length==0){
+            res.sendStatus(400);
+        }else{
+            res.json(result);
         }
     })
 })

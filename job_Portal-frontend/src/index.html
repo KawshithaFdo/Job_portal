@@ -68,10 +68,10 @@
         <div class="col-6 tbldiv">
             <table class="table  table-hover tbl">
                 <tbody id="tbldeletejobs">
-                <tr class="bg-info">
+                <!--<tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
                     <td><button class="text-white bg-danger" id="btndeletejob" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td>
-                </tr>
+                </tr>-->
                 </tbody>
             </table>
         </div>
@@ -219,9 +219,10 @@
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="addajob" style="width: 240px">ADD A JOB</button>
-            <button class="empbtn row" id="removeajob" style="width: 320px">REMOVE/UPDATE A JOB</button>
+            <button class="empbtn row" id="removeajob" style="width: 320px">REMOVE A JOB</button>
             <button class="empbtn row" id="changeemppassword" style="width: 400px">CHANGE PASSWORD</button>
-<!--            <button class="empbtn row" id="scanstqr" style="width: 480px">SCAN STUDENT'S QR</button>-->
+            <button class="empbtn row" id="giveafeedback" style="width: 450px">GIVE A FEEDBACK</button>
+            <button class="empbtn row" id="scanstqr" style="width: 500px">SCAN STUDENT'S QR</button>
         </div>
     </div>
 </section>
@@ -245,9 +246,8 @@
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="findajob" style="width: 240px">APPLY A JOB</button>
-            <button class="empbtn row" id="giveafeedback" style="width: 320px">GIVE A FEEDBACK</button>
             <button class="empbtn row" id="changestpassword" style="width: 400px">CHANGE PASSWORD</button>
-            <button class="empbtn row" id="scanstqr" style="width: 480px">SCAN STUDENT'S QR</button>
+
         </div>
     </div>
 </section>
@@ -316,76 +316,45 @@
         <div class="col-6 tbldiv">
             <table class="table  table-hover tbl">
                 <tbody id="tbljobs">
-                <tr class="bg-info">
+                <!--<tr class="bg-info">
                     <td class="tbltxt">Car Cleaner</td>
                     <td><button class="text-white bg-primary" id="btnupdate" style="border-radius: 15px;width:112px">UPDATE</button></td>
                     <td><button class="text-white bg-danger" id="btndelete" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td>
-                </tr>
+                </tr>-->
                 </tbody>
             </table>
         </div>
     </section>
 </section>
-<!--Update Job-->
-<section id="updatejob" class="newAcc row">
-    <div class="col-6 pt-5 col1">
-        <div class="mb-2">
-            <label class="form-label" for="txtupdatecompanyname">COMPANY NAME :</label>
-            <input class="form-control w-50" id="txtupdatecompanyname" placeholder="Company name" type="text">
-        </div>
-        <div class="mb-2">
-            <label class="form-label" for="txtupdatejobtitle">JOB TITLE :</label>
-            <input class="form-control w-50" id="txtupdatejobtitle" placeholder="Job title" type="text">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtupdatejoblocation">LOCATION : </label>
-            <input class="form-control  w-50" id="txtupdatejoblocation" placeholder="Location" type="text">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtupdatejobtime">JOB TIME : </label>
-            <input class="form-control w-50" id="txtupdatejobtime" placeholder="Job Time" type="password">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtupdatejobsalary">SALARY RATE :</label>
-            <input class="form-control w-50" id="txtupdatejobsalary" placeholder="Salary Rate" type="text">
-        </div>
-    </div>
-    <div class="col-6 pt-5 col1">
-        <div class="mb-3">
-            <label class="form-label" for="txtupdatejobgender">REQUIRED GENDER : </label>
-            <input class="form-control  w-50" id="txtupdatejobgender" placeholder="Gender" type="text">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtupdatejobskills">REQUIRED SKILLS : </label>
-            <input class="form-control w-50" id="txtupdatejobskills" placeholder="Required Skills" type="password">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="txtupdateaboutjob">ABOUT JOB : </label>
-            <input class="form-control w-50" id="txtupdateaboutjob" placeholder="About" type="password">
-        </div>
-        <div class="mb-3">
-            <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" >UPDATE</button>
-        </div>
-    </div>
-</section>
 <!--Filter job-->
 <section id="filterjob" class="newAcc row">
     <section>
-        <div class="col1 filterjob">
+      <!--  <div class="col1 filterjob">
             <h1>FILTER BY</h1>
             <div class="col mb-12">
                 <label class="form-label" for="txtsearchlocation">LOCATION :</label>
                 <input class="form-control w-50" id="txtsearchlocation" placeholder="Location" type="text">
                 <button class="text-white bg-primary w-25" id="searchjob" style="border-radius: 15px">SEARCH</button>
             </div>
-        </div>
-        <div class="col-6 tbldiv" style="bottom: 0">
-            <table class="table  table-hover tbl">
-                <tbody id="tblseejobs">
-                <tr class="bg-info">
-                    <td class="tbltxt">Car Cleaner</td>
-                    <td><button class="text-white bg-primary" id="btnapplyjob" style="border-radius: 15px;width:112px">apply</button></td>
+        </div>-->
+        <div class="col" style="position: relative;top: 50px;">
+            <table class="table-bordered  table-hover tbl">
+                <thead>
+                <tr style="background-color: #bacbe6">
+                    <th style="text-align: center;">ID</th>
+                    <th style="text-align: center;">Company</th>
+                    <th style="text-align: center;">Job</th>
+                    <th style="text-align: center;">Location</th>
+                    <th style="text-align: center;">Job-Time</th>
+                    <th style="text-align: center;">Salary</th>
+                    <th style="text-align: center;">Gender</th>
+                    <th style="text-align: center;">Required</th>
+                    <th style="text-align: center;">About</th>
+                    <th style="text-align: center;">Apply</th>
                 </tr>
+                </thead>
+                <tbody id="tblseejobs">
+
                 </tbody>
             </table>
         </div>
@@ -414,8 +383,8 @@
 <section id="feedback" class="newAcc row">
     <section class="feedback">
         <div class=" mb-3">
-            <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedbackstnic">Student Nic :</label>
-            <input class="form-control w-50" id="txtfeedbackstnic" placeholder="Student Nic" type="text">
+            <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedbackstid">Student ID :</label>
+            <input class="form-control w-50" id="txtfeedbackstid" placeholder="Student ID" type="text">
         </div>
         <div class=" mb-3">
             <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedback">Write your<br>Feedback : </label>
@@ -429,9 +398,7 @@
         <div class="col-6 tbldiv" style="top:0px;">
             <table class="table  table-hover tbl">
                 <tbody id="tblstfeedbacks">
-                <tr class="bg-info">
-                    <td class="tbltxt">Car Cleaner</td>
-                </tr>
+
                 </tbody>
             </table>
         </div>
@@ -487,16 +454,16 @@
     <div class="col-6 pt-5 col1 qrdata">
 
         <div class="mb-2">
-            <label class="form-label" for="txtcurrentuserid">USER ID :</label>
+            <label class="form-label" for="txtcurrentuserid">STUDENT ID :</label>
             <input class="form-control w-50" style="position: relative;left: 128px" id="txtcurrentuserid" placeholder="User Id" type="text">
         </div>
         <div class="mb-2">
             <label class="form-label" for="txtcurrentpass">CURRENT PASSWORD :</label>
-            <input class="form-control w-50" id="txtcurrentpass" style="position: relative;left: 32px" placeholder="Current Password" type="text">
+            <input class="form-control w-50" id="txtcurrentpass" style="position: relative;left: 32px" placeholder="Current Password" type="password">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtnewpass">NEW PASSWORD : </label>
-            <input class="form-control  w-50" id="txtnewpass" style="position: relative;left: 64px" placeholder="New Password" type="text">
+            <input class="form-control  w-50" id="txtnewpass" style="position: relative;left: 64px" placeholder="New Password" type="password">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtconfirmpass">CONFIRM NEW PASSWORD : </label>
@@ -518,11 +485,11 @@
         </div>
         <div class="mb-2">
             <label class="form-label" for="txtcurrentemppass">CURRENT PASSWORD :</label>
-            <input class="form-control w-50" id="txtcurrentemppass" style="position: relative;left: 32px" placeholder="Current Password" type="text">
+            <input class="form-control w-50" id="txtcurrentemppass" style="position: relative;left: 32px" placeholder="Current Password" type="password">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtnewemppass">NEW PASSWORD : </label>
-            <input class="form-control  w-50" id="txtnewemppass" style="position: relative;left: 64px" placeholder="New Password" type="text">
+            <input class="form-control  w-50" id="txtnewemppass" style="position: relative;left: 64px" placeholder="New Password" type="password">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtconfirmemppass">CONFIRM NEW PASSWORD : </label>
@@ -573,6 +540,9 @@
                 <label class="form-label" for="txtempaccgender">GENDER :</label>
                 <input class="form-control w-50" id="txtempaccgender" placeholder="Gender" type="text">
             </div>
+            <div class="mb-3">
+                <button id="btnupdateempacc" type="button" class="btn btn-success btncreate" style="right: 100px;">UPDATE</button>
+            </div>
         </div>
         <section>
             <div class="col-6 tbldiv" style="position: relative;bottom: 5rem;">
@@ -584,12 +554,7 @@
                         <col span="1" style="width: 15%;">
                     </colgroup>
                     <tbody id="tblempacc">
-                    <tr class="bg-info">
-                        <td class="tbltxt">Car Cleaner</td>
-                        <td><button class="text-white bg-primary" id="btnviewemp" style="border-radius: 15px;width:7rem">VIEW</button></td>
-                        <td><button class="text-white bg-primary" id="btnupdateemp" style="border-radius: 15px;width:7rem">UPDATE</button></td>
-                        <td><button class="text-white bg-primary" id="btndeleteemp" style="border-radius: 15px;width:7rem">DELETE</button></td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -636,15 +601,16 @@
                 <label class="form-label" for="txtstgender">GENDER :</label>
                 <input class="form-control w-50" id="txtstgender" placeholder="Gender" type="text">
             </div>
+            <div class="mb-3">
+                <button id="btnupdatestuacc" type="button" class="btn btn-success btncreate" style="right: 100px;">UPDATE</button>
+            </div>
         </div>
             <h2 class="empacch2">MY JOBS</h2>
         <section>
             <div class="col-6 tbldiv" style="top:100px;">
                 <table class="table  table-hover tbl">
                     <tbody id="tblstjobs">
-                    <tr class="bg-info">
-                        <td class="tbltxt">Car Cleaner</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -672,6 +638,120 @@
         </div>
     </div>
 </div>
+<!--Update Job-->
+<div class="modal fade" id="updatejob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="job" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+<!--                <h5 class="modal-title text-danger" id="updatejob">Administrater Log In</h5>-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>COMPANY NAME</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatecompanyname" class="form-control" type="text">
+                </div>
+                <h4>JOB TITLE</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejobtitle" class="form-control" type="text">
+                </div>
+                <h4>LOCATION</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejoblocation" class="form-control" type="text">
+                </div>
+                <h4>JOB TIME</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejobtime" class="form-control" type="text">
+                </div>
+                <h4>SALARY RATE</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejobsalary" class="form-control" type="text">
+                </div>
+                <h4>REQUIRED GENDER</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejobgender" class="form-control" type="text">
+                </div>
+                <h4>REQUIRED SKILLS</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdatejobskills" class="form-control" type="text">
+                </div>
+                <h4>ABOUT JOB</h4>
+                <div class="d-flex mt-4 mb-4">
+                    <input id="txtupdateaboutjob" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" data-bs-dismiss="modal" style="bottom: 9px; right: 240px;">UPDATE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Confirm Apply Job-->
+<div class="modal fade" id="applyjob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="apply" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-secondary" id="apply">Are u sure u want to apply this job?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button id="btncancelapply" type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">CANCEL</button>
+                <button id="btnconfirmapply" type="button" class="btn btn-success" data-bs-dismiss="modal">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="modal fade" id="updatejob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="job" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="col-6 pt-5 col1">
+                <div class="mb-2">
+                    <label class="form-label" for="txtupdatecompanyname">COMPANY NAME :</label>
+                    <input class="form-control w-50" id="txtupdatecompanyname" placeholder="Company name" type="text">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="txtupdatejobtitle">JOB TITLE :</label>
+                    <input class="form-control w-50" id="txtupdatejobtitle" placeholder="Job title" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdatejoblocation">LOCATION : </label>
+                    <input class="form-control  w-50" id="txtupdatejoblocation" placeholder="Location" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdatejobtime">JOB TIME : </label>
+                    <input class="form-control w-50" id="txtupdatejobtime" placeholder="Job Time" type="password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdatejobsalary">SALARY RATE :</label>
+                    <input class="form-control w-50" id="txtupdatejobsalary" placeholder="Salary Rate" type="text">
+                </div>
+            </div>
+            <div class="col-6 pt-5 col1">
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdatejobgender">REQUIRED GENDER : </label>
+                    <input class="form-control  w-50" id="txtupdatejobgender" placeholder="Gender" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdatejobskills">REQUIRED SKILLS : </label>
+                    <input class="form-control w-50" id="txtupdatejobskills" placeholder="Required Skills" type="password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtupdateaboutjob">ABOUT JOB : </label>
+                    <input class="form-control w-50" id="txtupdateaboutjob" placeholder="About" type="password">
+                </div>
+                <div class="mb-3">
+                    <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" >UPDATE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -774,7 +854,10 @@
             success: function (res) {
                 clearuser();
                 success();
-                logout();
+                $("#newstacc").css("display", "none");
+                $("#nav").css("display", "none");
+                $("#qr").css("display", "flex");
+
             },
             error: function (ob, errorStus) {
                 error();
@@ -835,7 +918,7 @@
             contentType: "application/json",
             success: function (res) {
                 if (res != {}){
-                    console.log(res);
+                    // console.log(res);
                     $("#login").css("display", "none");
                     $("#nav").css("display", "none");
                     $("#logednav").css("display", "block");
@@ -860,7 +943,7 @@
 
     });
     let logedst_Id=0;
-    let logedemp_Id=0;
+    var logedemp_Id=0;
     $("#loginbtn").click(function () {
         /*Student Login*/
         let id = $("#txtloginUserid").val();
@@ -908,12 +991,61 @@
             contentType: "application/json",
             success: function (res) {
                 if (res != {}){
-                    console.log(res);
+                    // console.log(res);
                     $("#login").css("display", "none");
                     $("#nav").css("display", "block");
                     $("#adminform").css("display", "block");
                     $("#txtloginUserid").val("");
                     $("#txtloginPassword").val("");
+
+                    $.ajax({
+                        url: "http://localhost:5000/job/",
+                        method: "GET",
+                        success: function (res) {
+                            $("#tbldeletejobs tr").remove();//clean table old values
+                            for (const id of res) {
+                                //Add a Row to table
+                                let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
+                                    <td><button class="text-white bg-danger" id="btndeletejob" style="border-radius: 15px;width:112px">DELETE</button></td></tr>`;
+                                $("#tbldeletejobs").append(row);
+
+                                $("#tbldeletejobs>tr").click(function () {
+                                    /*Delete job */
+                                    let id = $(this).children().eq(0).text();
+                                    $.ajax({
+                                        url: "http://localhost:5000/job/"+id,
+                                        method: "DELETE",
+                                        contentType: "application/json",
+                                        success: function (res) {
+                                            success();
+                                            $.ajax({
+                                                url: "http://localhost:5000/job/",
+                                                method: "GET",
+                                                success: function (res) {
+                                                    $("#tbldeletejobs tr").remove();//clean table old values
+                                                    for (const id of res) {
+                                                        //Add a Row to table
+                                                        let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
+                                                        <td><button class="text-white bg-danger" id="btndeletejob" style="border-radius: 15px;width:112px">DELETE</button></td></tr>`;
+                                                        $("#tbldeletejobs").append(row);
+                                                    }
+                                                    },
+                                                    error: function (ob, errorStus) {
+                                                        error();
+                                                    }
+                                                });
+                                        },
+                                        error: function (ob, errorStus) {
+                                            error();
+                                        }
+                                    });
+                                });
+                            }
+                        },
+                        error: function (ob) {
+                            error();
+                        }
+                    });
                 }else{
                     console.log("Not Equal");
                     /*$("#txtloginUserid").val("");
@@ -952,7 +1084,6 @@
             method: "GET",
             contentType: "application/json",
             success: function (res) {
-                console.log(res[0]);
                 stuAcc();
                 $("#txtstname").val(res[0].student_name);
                 $("#txtstnic").val(res[0].nic);
@@ -962,10 +1093,55 @@
                 $("#txtstlocation").val(res[0].location);
                 $("#txtstemail").val(res[0].email);
                 $("#txtstgender").val(res[0].gender);
+                $.ajax({
+                    url: "http://localhost:5000/st_job/"+logedst_Id,
+                    method: "GET",
+                    contentType: "application/json",
+                    success: function (res) {
+                        $("#tblstjobs tr").remove();
+                        for (var i=0;i<=res.length-1;i++) {
+                                       //Add a Row to table
+                                       let row = `<tr><td>${res[i].title}</td></tr>`;
+                                       $("#tblstjobs").append(row);
+
+                        }
+
+                    },
+                    error: function (ob, errorStus) {
+                        error();
+
+                    }
+                });
             },
             error: function (ob, errorStus) {
                 error();
 
+            }
+        });
+    });
+    $("#btnupdatestuacc").click(function () {
+        /*Update Stu*/
+        var userOb={
+            studentname: $("#txtstname").val(),
+            location: $("#txtstlocation").val(),
+            dateofbirth: $("#txtstdob").val(),
+            nic: $("#txtstnic").val(),
+            contact:$("#txtstcontact").val(),
+            gender: $("#txtstgender").val(),
+            email: $("#txtstemail").val(),
+            univercity:$("#txtstunivercity").val()
+
+        }
+        $.ajax({
+            url: "http://localhost:5000/student",
+            method: "PUT",
+            contentType: "application/json",
+            data: JSON.stringify(userOb),
+            success: function (res) {
+                success();
+            },
+            error: function (ob, errorStus) {
+                error();
             }
         });
     });
@@ -976,15 +1152,32 @@
             method: "GET",
             contentType: "application/json",
             success: function (res) {
-                console.log(res[0]);
+                // console.log(res[0]);
                 $("#txtempaccname").val(res[0].name);
                 $("#txtempaccnic").val(res[0].nic);
-                $("#txtempacccompany").val(res[0].companyname);
+                $("#txtempacccompany").val(res[0].company_name);
                 $("#txtempacccontact").val(res[0].contact);
                 $("#txtempaccaddress").val(res[0].address);
                 $("#txtempaccposition").val(res[0].jobposition);
                 $("#txtempaccemail").val(res[0].email);
                 $("#txtempaccgender").val(res[0].gender);
+
+                $.ajax({
+                    url: "http://localhost:5000/job/"+logedemp_Id,
+                    method: "GET",
+                    success: function (res) {
+                        $("#tblempacc tr").remove();//clean table old values
+                        for (const id of res) {
+                            //Add a Row to table
+                            let row = `<tr><td>${id.job_title}</td></tr>`;
+                            $("#tblempacc").append(row);
+
+                        }
+                    },
+                    error: function (ob) {
+                        error();
+                    }
+                });
             },
             error: function (ob, errorStus) {
                 error();
@@ -993,6 +1186,32 @@
         });
 
         empAcc();
+    });
+    $("#btnupdateempacc").click(function () {
+        /*Update Emp*/
+        var empOb={
+            name: $("#txtempaccname").val(),
+            nic: $("#txtempaccnic").val(),
+            companyname: $("#txtempacccompany").val(),
+            contact: $("#txtempacccontact").val(),
+            address:$("#txtempaccaddress").val(),
+            gender: $("#txtempaccgender").val(),
+            email: $("#txtempaccemail").val(),
+            jobposition:$("#txtempaccposition").val()
+        }
+        $.ajax({
+            url: "http://localhost:5000/jobposter",
+            method: "PUT",
+            contentType: "application/json",
+            data: JSON.stringify(empOb),
+            success: function (res) {
+                console.log(res)
+                success();
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     });
 
     $("#navmenu").click(function () {
@@ -1060,7 +1279,8 @@
             salaryRate: $("#txtjobsalary").val(),
             gender:$("#txtjobgender").val(),
             skills: $("#txtjobskills").val(),
-            about: $("#txtaboutjob").val()
+            about: $("#txtaboutjob").val(),
+            id:logedemp_Id
         }
         $.ajax({
             url: "http://localhost:5000/job",
@@ -1080,13 +1300,38 @@
         });
     });
 
+    var deleteid;
     $("#removeajob").click(function () {
-        $("#logeddashboard").css("display", "none");
-        $("#updatedeletejobmain").css("display", "block");
+        $.ajax({
+            url: "http://localhost:5000/job/"+logedemp_Id,
+            method: "GET",
+            success: function (res) {
+                $("#tbljobs tr").remove();//clean table old values
+                for (const id of res) {
+                    $("#logeddashboard").css("display", "none");
+                    $("#updatedeletejobmain").css("display", "block");
+                    //Add a Row to table
+                    let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
+                                    <td><button class="text-white bg-danger" id="btndelete" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td></tr>`;
+                    $("#tbljobs").append(row);
+
+                    $("#tbljobs>tr").click(function () {
+                        deleteid = $(this).children().eq(0).text();
+                    });
+                }
+            },
+            error: function (ob) {
+                error();
+            }
+        });
+
     });
     $("#changeemppassword").click(function () {
         $("#logeddashboard").css("display", "none");
         $("#changeemployeepassword").css("display", "block");
+
+        $("#txtcurrentid").val(logedemp_Id);
+
     });
     $("#scanstqr").click(function () {
         $("#logeddashboardst").css("display", "none");
@@ -1095,16 +1340,90 @@
 
     $("#btndeleteconfirm").click(function () {
         /*Delete job*/
+        $.ajax({
+            url: "http://localhost:5000/job/"+deleteid,
+            method: "DELETE",
+            contentType: "application/json",
+            success: function (res) {
+                $.ajax({
+                    url: "http://localhost:5000/job/"+logedemp_Id,
+                    method: "GET",
+                    success: function (res) {
+                        $("#tbljobs tr").remove();//clean table old values
+                        for (const id of res) {
+                            $("#logeddashboard").css("display", "none");
+                            $("#updatedeletejobmain").css("display", "block");
+                            //Add a Row to table
+                            let row = `<tr><td>${id.job_title}</td><td><button class="text-white bg-primary" id="btnupdate" style="border-radius: 15px;width:112px">UPDATE</button></td><td><button class="text-white bg-danger" id="btndelete" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#deletejob">DELETE</button></td></tr>`;
+                            $("#tbljobs").append(row);
+                        }
+                    },
+                    error: function (ob) {
+                        error();
+                    }
+                });
+
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     });
-    $("#btnupdate").click(function () {
-        $("#updatedeletejobmain").css("display", "none");
-        $("#updatejob").css("display", "flex");
+    $("#btnconfirmapply").click(function () {
+        var userOb= {
+            st_id: logedst_Id,
+            title:title,
+            job_id: appliedjob
+        }
+        $.ajax({
+            url: "http://localhost:5000/st_job/",
+            method: "POST",
+            data: JSON.stringify(userOb),
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res);
+                success();
+                appliedjob=null;
+                title=null;
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     });
-    $("#btnupdatejob").click(function () {
-        success();
-    });
+
     $("#btnfeedback").click(function () {
-        success();
+        let id=$("#txtfeedbackstid").val();
+
+        $.ajax({
+            url: "http://localhost:5000/student/"+id,
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                var userOb={
+                    id: logedemp_Id,
+                    st_id: id,
+                    st_name: res[0].student_name,
+                    feedback: $("#txtfeedback").val()
+                }
+                $.ajax({
+                    url: "http://localhost:5000/feedback",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(userOb),
+                    success: function (res) {
+                        success();
+                        feedback();
+                    },
+                    error: function (ob, errorStus) {
+                        error();
+                    }
+                });
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     });
     $("#btnupdatepass").click(function () {
 
@@ -1168,7 +1487,7 @@
                     id: $("#txtcurrentid").val(),
                     name: res[0].name,
                     nic: res[0].nic,
-                    company_name: res[0].companyname,
+                    company_name: res[0].company_name,
                     contact: res[0].contact,
                     address:res[0].address,
                     gender: res[0].gender,
@@ -1206,8 +1525,41 @@
     $("#changestpassword").click(function () {
         $("#changepassword").css("display", "block");
         $("#logeddashboardst").css("display", "none");
+        $("#txtcurrentuserid").val(logedst_Id);
     });
+    let appliedjob;
+    let title;
     $("#findajob").click(function () {
+        $.ajax({
+            url: "http://localhost:5000/job",
+            method: "GET",
+            success: function (res) {
+                $("#tblseejobs tr").remove();//clean table old values
+                for (const id of res) {
+                    //Add a Row to table
+                    let row = `<tr><td align="center">${id.job_id}</td>
+                                <td align="center">${id.company_name}</td>
+                                <td align="center">${id.job_title}</td>
+                                <td align="center">${id.location}</td>
+                                <td align="center">${id.job_time}</td>
+                                <td align="center">${id.salaryRate}</td>
+                                <td align="center">${id.gender}</td>
+                                <td align="center">${id.skills}</td>
+                                <td align="center">${id.about}</td>
+                                <td align="center"><button class="text-white bg-primary" id="btnapplyjob" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#applyjob">APPLY</button></td></tr>`;
+                    $("#tblseejobs").append(row);
+                }
+                $("#tblseejobs>tr").click(function () {
+                    title=$(this).children().eq(2).text();
+                    appliedjob = $(this).children().eq(0).text();
+                });
+            },
+            error: function (ob) {
+                error();
+            }
+        });
+
+
         $("#filterjob").css("display", "flex");
         $("#logeddashboardst").css("display", "none");
     });
@@ -1217,9 +1569,28 @@
         success();
     });
     $("#giveafeedback").click(function () {
+
         $("#feedback").css("display", "flex");
-        $("#logeddashboardst").css("display", "none");
+        $("#logeddashboard").css("display", "none");
+        feedback();
     });
+    function feedback() {
+        $.ajax({
+            url: "http://localhost:5000/feedback",
+            method: "GET",
+            success: function (res) {
+                $("#tblstfeedbacks tr").remove();//clean table old values
+                for (const id of res) {
+                    //Add a Row to table
+                    let row = `<tr><td align="center">${id.st_name}</td><td align="center">${id.feedback}</td></tr>`;
+                    $("#tblstfeedbacks").append(row);
+                }
+            },
+            error: function (ob) {
+                error();
+            }
+        });
+    }
 
     function logout() {
         $("#adminform").css("display", "none");

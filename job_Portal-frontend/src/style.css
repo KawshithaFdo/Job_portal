@@ -233,7 +233,7 @@ input[type=text], input[type=password] {
     border-width: 5px !important;
     border-style: solid !important;
     border-color: rgba(0, 128, 255, 0.9) !important;
-    width: 90%;  /*Tested and working as expected: */
+    width: 98%;
     padding-top: 1%;
     margin: 0px auto;
     float: none;
