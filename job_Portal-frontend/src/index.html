@@ -800,7 +800,7 @@
 </script>
 <script>
     /*-------------------Validate Login--------------------------------------------*/
-    const UserPasswordRegEx =/^[A-z0-9 ]{3,}$/;
+    const UserPasswordRegEx =/^[A-z0-9]{4,}$/;
     const UserNameRegEx =/^[A]?[S]?[E]?[-][0-9]{3,}$/;
     $('#txtloginUserid,#txtloginPassword').on('keydown', function (eventOb) {
         if (eventOb.key == "Tab") {
@@ -821,6 +821,8 @@
         }
     });
     $("#loginbtn").attr('disabled', true);
+    $("#loginempbtn").attr('disabled', true);
+    $("#loginadminbtn").attr('disabled', true);
     function Valid() {
         var username = $("#txtloginUserid").val();
         $("#txtloginUserid").css('border', '2px solid green');
@@ -855,10 +857,24 @@
     }
     function setButton() {
         let b = Valid();
-        if (b) {
-            $("#loginbtn").attr('disabled', false);
-        } else {
-            $("#loginbtn").attr('disabled', true);
+        if(b){
+            var actor=$("#txtloginUserid").val().split("-")[0];
+            if(actor=="S"){
+                $("#loginbtn").attr('disabled', false);
+                // $("#loginbtn").focus();
+                $("#loginempbtn").attr('disabled', true);
+                $("#loginadminbtn").attr('disabled', true);
+            }else if(actor=="E"){
+                $("#loginempbtn").attr('disabled', false);
+                // $("#loginempbtn").focus();
+                $("#loginbtn").attr('disabled', true);
+                $("#loginadminbtn").attr('disabled', true);
+            }else if(actor=="A"){
+                $("#loginempbtn").attr('disabled', true);
+                $("#loginbtn").attr('disabled', true);
+                $("#loginadminbtn").attr('disabled', false);
+                // $("#loginadminbtn").focus();
+            }
         }
     }
     /*----------------------------------------------------------------------------*/
@@ -1381,7 +1397,7 @@
 
     });
     $("#scanstqr").click(function () {
-        $("#logeddashboardst").css("display", "none");
+        $("#logeddashboard").css("display", "none");
         $("#scanqr").css("display", "flex");
     });
 
