@@ -10,7 +10,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">-->
 </head>
 <body>
 <!--Home page-->
@@ -248,7 +248,7 @@
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="findajob" style="width: 240px">APPLY A JOB</button>
-            <button class="empbtn row" id="changestpassword" style="width: 400px">CHANGE PASSWORD</button>
+            <button class="empbtn row" id="changestpassword" style="width: 300px">CHANGE PASSWORD</button>
 
         </div>
     </div>
@@ -262,7 +262,7 @@
         </div>
         <div class="mb-2">
             <label class="form-label" for="txtjobid">JOB ID :</label>
-            <input class="form-control w-50" id="txtjobid" placeholder="Job ID" type="text">
+            <input class="form-control w-50" id="txtjobid" placeholder="J-xxx" type="text">
         </div>
         <div class="mb-2">
             <label class="form-label" for="txtjobtitle">JOB TITLE :</label>
@@ -284,7 +284,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtjobgender">REQUIRED GENDER : </label>
-            <input class="form-control  w-50" id="txtjobgender" placeholder="Gender" type="text">
+            <input class="form-control  w-50" id="txtjobgender" placeholder="male/female" type="text">
         </div>
         <div class="mb-3">
             <label class="form-label" for="txtjobskills">REQUIRED SKILLS : </label>
@@ -543,7 +543,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtempaccgender">GENDER :</label>
-                <input class="form-control w-50" id="txtempaccgender" placeholder="Gender" type="text">
+                <input class="form-control w-50" id="txtempaccgender" placeholder="female/male/any" type="text">
             </div>
             <div class="mb-3">
                 <button id="btnupdateempacc" type="button" class="btn btn-success btncreate" style="right: 100px;">UPDATE</button>
@@ -604,7 +604,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtstgender">GENDER :</label>
-                <input class="form-control w-50" id="txtstgender" placeholder="Gender" type="text">
+                <input class="form-control w-50" id="txtstgender" placeholder="male/female/any" type="text">
             </div>
             <div class="mb-3">
                 <button id="btnupdatestuacc" type="button" class="btn btn-success btncreate" style="right: 100px;">UPDATE</button>
@@ -709,55 +709,6 @@
     </div>
 </div>
 
-<!--
-<div class="modal fade" id="updatejob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="job" aria-hidden="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="col-6 pt-5 col1">
-                <div class="mb-2">
-                    <label class="form-label" for="txtupdatecompanyname">COMPANY NAME :</label>
-                    <input class="form-control w-50" id="txtupdatecompanyname" placeholder="Company name" type="text">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label" for="txtupdatejobtitle">JOB TITLE :</label>
-                    <input class="form-control w-50" id="txtupdatejobtitle" placeholder="Job title" type="text">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdatejoblocation">LOCATION : </label>
-                    <input class="form-control  w-50" id="txtupdatejoblocation" placeholder="Location" type="text">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdatejobtime">JOB TIME : </label>
-                    <input class="form-control w-50" id="txtupdatejobtime" placeholder="Job Time" type="password">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdatejobsalary">SALARY RATE :</label>
-                    <input class="form-control w-50" id="txtupdatejobsalary" placeholder="Salary Rate" type="text">
-                </div>
-            </div>
-            <div class="col-6 pt-5 col1">
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdatejobgender">REQUIRED GENDER : </label>
-                    <input class="form-control  w-50" id="txtupdatejobgender" placeholder="Gender" type="text">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdatejobskills">REQUIRED SKILLS : </label>
-                    <input class="form-control w-50" id="txtupdatejobskills" placeholder="Required Skills" type="password">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="txtupdateaboutjob">ABOUT JOB : </label>
-                    <input class="form-control w-50" id="txtupdateaboutjob" placeholder="About" type="password">
-                </div>
-                <div class="mb-3">
-                    <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" >UPDATE</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
-
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -769,7 +720,6 @@
         return $('<div/>').text(value)
             .html();
     }
-
     $(function () {
 
         // Specify an onclick function
@@ -791,86 +741,8 @@
         });
     });
 </script>
+<script src="script.js"></script>
 <script>
-    /*-------------------Validate Login--------------------------------------------*/
-    const UserPasswordRegEx =/^[A-z0-9]{4,}$/;
-    const UserNameRegEx =/^[A]?[S]?[E]?[-][0-9]{3,}$/;
-    $('#txtloginUserid,#txtloginPassword').on('keydown', function (eventOb) {
-        if (eventOb.key == "Tab") {
-            eventOb.preventDefault();
-        }
-    });
-    $("#txtloginUserid").on('keyup', function (eventOb) {
-        setButton();
-        if (eventOb.key == "Enter") {
-            checkValid();
-        }
-
-    });
-    $("#txtloginPassword").on('keyup', function (eventOb) {
-        setButton();
-        if (eventOb.key == "Enter") {
-            checkValid();
-        }
-    });
-    $("#loginbtn").attr('disabled', true);
-    $("#loginempbtn").attr('disabled', true);
-    $("#loginadminbtn").attr('disabled', true);
-    function Valid() {
-        var username = $("#txtloginUserid").val();
-        $("#txtloginUserid").css('border', '2px solid green');
-        if (UserNameRegEx.test(username)) {
-            var userpassword = $("#txtloginPassword").val();
-            var resp = UserPasswordRegEx.test(userpassword);
-            if (resp) {
-                $("#txtloginPassword").css('border', '2px solid green');
-                return true;
-            } else {
-                $("#txtloginPassword").css('border', '2px solid red');
-                return false;
-            }
-        } else {
-            $("#txtloginUserid").css('border', '2px solid red');
-            return false;
-        }
-    }
-    function checkValid() {
-        var username = $("#txtloginUserid").val();
-        if (UserNameRegEx.test(username)) {
-            $("#txtloginPassword").focus();
-            var userpassword = $("#txtloginPassword").val();
-            if (UserPasswordRegEx.test(userpassword)) {
-                $("#loginbtn").focus();
-            } else {
-                $("#txtloginPassword").focus();
-            }
-        } else {
-            $("#txtloginUserid").focus();
-        }
-    }
-    function setButton() {
-        let b = Valid();
-        if(b){
-            var actor=$("#txtloginUserid").val().split("-")[0];
-            if(actor=="S"){
-                $("#loginbtn").attr('disabled', false);
-                // $("#loginbtn").focus();
-                $("#loginempbtn").attr('disabled', true);
-                $("#loginadminbtn").attr('disabled', true);
-            }else if(actor=="E"){
-                $("#loginempbtn").attr('disabled', false);
-                // $("#loginempbtn").focus();
-                $("#loginbtn").attr('disabled', true);
-                $("#loginadminbtn").attr('disabled', true);
-            }else if(actor=="A"){
-                $("#loginempbtn").attr('disabled', true);
-                $("#loginbtn").attr('disabled', true);
-                $("#loginadminbtn").attr('disabled', false);
-                // $("#loginadminbtn").focus();
-            }
-        }
-    }
-    /*----------------------------------------------------------------------------*/
     logout();
     var qrdata;
     $("#navlog").click(function () {
@@ -882,6 +754,17 @@
         $("#login").css("display", "none");
         $("#dashboard").css("display", "none");
         $("#newstacc").css("display", "flex");
+
+        $.ajax({
+            url: "http://localhost:5000/student/E-001/1234/2222",
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                $("#txtstid").val(res);
+            },
+            error: function (ob, errorStus) {
+            }
+        });
     });
     $("#btncreate").click(function () {
      /*Success the new St Account*/
@@ -945,7 +828,6 @@
             contentType: "application/json",
             data: JSON.stringify(empOb),
             success: function (res) {
-                console.log(empOb.companyname);
                 clearemp();
                 success();
                 logout();
@@ -960,6 +842,16 @@
     $("#empsignin").click(function () {
         $("#newstacc").css("display", "none");
         $("#newempacc").css("display", "flex");
+        $.ajax({
+            url: "http://localhost:5000/jobposter/E-001/1234/2222",
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                $("#txtempid").val(res);
+            },
+            error: function (ob, errorStus) {
+            }
+        });
 
     });
     /*Login Button*/
@@ -1177,27 +1069,40 @@
     });
     $("#btnupdatestuacc").click(function () {
         /*Update Stu*/
-        var userOb={
-            studentname: $("#txtstname").val(),
-            location: $("#txtstlocation").val(),
-            dateofbirth: $("#txtstdob").val(),
-            nic: $("#txtstnic").val(),
-            contact:$("#txtstcontact").val(),
-            gender: $("#txtstgender").val(),
-            email: $("#txtstemail").val(),
-            univercity:$("#txtstunivercity").val()
-
-        }
         $.ajax({
-            url: "http://localhost:5000/student",
-            method: "PUT",
+            url: "http://localhost:5000/student/"+logedst_Id,
+            method: "GET",
             contentType: "application/json",
-            data: JSON.stringify(userOb),
             success: function (res) {
-                success();
+                var userOb={
+                    st_id: logedst_Id,
+                    studentname: $("#txtstname").val(),
+                    location: $("#txtstlocation").val(),
+                    dateofbirth: $("#txtstdob").val(),
+                    nic: $("#txtstnic").val(),
+                    contact:$("#txtstcontact").val(),
+                    gender: $("#txtstgender").val(),
+                    email: $("#txtstemail").val(),
+                    univercity:$("#txtstunivercity").val(),
+                    skills:res[0].skills,
+                    password:res[0].password
+                }
+                $.ajax({
+                    url: "http://localhost:5000/student",
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(userOb),
+                    success: function (res) {
+                        success();
+                    },
+                    error: function (ob, errorStus) {
+                        error();
+                    }
+                });
             },
             error: function (ob, errorStus) {
                 error();
+
             }
         });
     });
@@ -1245,27 +1150,40 @@
     });
     $("#btnupdateempacc").click(function () {
         /*Update Emp*/
-        var empOb={
-            name: $("#txtempaccname").val(),
-            nic: $("#txtempaccnic").val(),
-            companyname: $("#txtempacccompany").val(),
-            contact: $("#txtempacccontact").val(),
-            address:$("#txtempaccaddress").val(),
-            gender: $("#txtempaccgender").val(),
-            email: $("#txtempaccemail").val(),
-            jobposition:$("#txtempaccposition").val()
-        }
         $.ajax({
-            url: "http://localhost:5000/jobposter",
-            method: "PUT",
+            url: "http://localhost:5000/jobposter/"+logedemp_Id,
+            method: "GET",
             contentType: "application/json",
-            data: JSON.stringify(empOb),
             success: function (res) {
-                console.log(res)
-                success();
+                var empOb={
+                    id:logedemp_Id,
+                    name: $("#txtempaccname").val(),
+                    nic: $("#txtempaccnic").val(),
+                    companyname: $("#txtempacccompany").val(),
+                    contact: $("#txtempacccontact").val(),
+                    address:$("#txtempaccaddress").val(),
+                    gender: $("#txtempaccgender").val(),
+                    email: $("#txtempaccemail").val(),
+                    jobposition:$("#txtempaccposition").val(),
+                    password:res[0].password
+                }
+                $.ajax({
+                    url: "http://localhost:5000/jobposter",
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(empOb),
+                    success: function (res) {
+                        console.log(res)
+                        success();
+                    },
+                    error: function (ob, errorStus) {
+                        error();
+                    }
+                });
             },
             error: function (ob, errorStus) {
                 error();
+
             }
         });
     });
@@ -1324,6 +1242,16 @@
     $("#addajob").click(function () {
         $("#logeddashboard").css("display", "none");
         $("#addjob").css("display", "flex");
+        $.ajax({
+            url: "http://localhost:5000/job/E-001/1234/2222",
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                $("#txtjobid").val(res);
+            },
+            error: function (ob, errorStus) {
+            }
+        });
     });
     $("#btnaddjob").click(function () {
         var userOb={
@@ -1482,16 +1410,14 @@
         });
     });
     $("#btnupdatepass").click(function () {
-
         $.ajax({
             url: "http://localhost:5000/student/"+logedst_Id,
             method: "GET",
             contentType: "application/json",
             success: function (res) {
-                console.log(res[0]);
                 var userOb={
                     st_id: $("#txtcurrentuserid").val(),
-                    student_name:res[0].student_name,
+                    studentname:res[0].student_name,
                     location:res[0].location,
                     dateofbirth: res[0].dateofbirth,
                     nic:res[0].nic,
@@ -1502,7 +1428,7 @@
                     skills:res[0].skills,
                     password: $("#txtconfirmpass").val()
                 }
-
+                console.log(userOb);
                  $.ajax({
                         url: "http://localhost:5000/student/",
                         method: "PUT",
@@ -1514,6 +1440,7 @@
                             $("#txtcurrentpass").val("");
                             $("#txtnewpass").val("");
                             $("#txtconfirmpass").val("");
+                            $("#btnupdatepass").attr('disabled', true);
                         },
                         error: function (ob, errorStus) {
                             error();
@@ -1543,7 +1470,7 @@
                     id: $("#txtcurrentid").val(),
                     name: res[0].name,
                     nic: res[0].nic,
-                    company_name: res[0].company_name,
+                    companyname: res[0].company_name,
                     contact: res[0].contact,
                     address:res[0].address,
                     gender: res[0].gender,
@@ -1563,6 +1490,7 @@
                         $("#txtcurrentemppass").val("");
                         $("#txtnewemppass").val("");
                         $("#txtconfirmemppass").val("");
+                        $("#btnupdateemppass").attr('disabled', true);
                     },
                     error: function (ob, errorStus) {
                         error();

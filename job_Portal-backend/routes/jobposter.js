@@ -58,6 +58,7 @@ router.post('/', (req, res) => {
 
 // Update
 router.put('/', (req, res) => {
+    const id = req.body.id
     const name = req.body.name
     const nic = req.body.nic
     const company_name = req.body.companyname
@@ -66,11 +67,12 @@ router.put('/', (req, res) => {
     const gender = req.body.gender
     const email = req.body.email
     const jobposition = req.body.jobposition
+    const password=req.body.password
 
 
-    var query = "UPDATE jobposter SET name=?, company_name=?, contact=?, address=?, gender=?, email=?, jobposition=? WHERE nic=?";
+    var query = "UPDATE jobposter SET name=?,nic=?, company_name=?, contact=?, address=?, gender=?, email=?, jobposition=?, password=? WHERE id=?";
 
-    connection.query(query, [name,company_name,contact,address,gender,email,jobposition,nic], (err, result) => {
+    connection.query(query, [name,nic,company_name,contact,address,gender,email,jobposition,password,id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -119,6 +121,28 @@ router.get('/:id/:password', (req, res) => {
             // console.log("Not Empty")
             res.json(result);
         }
+    })
+})
+// Generate ID
+router.get('/:id/:password/:nic', (req, res) => {
+    const id = req.params.id;
+    const password = req.params.password;
+
+    // console.log(st_id,password);
+
+    var query = "SELECT * FROM Jobposter ORDER BY id  DESC LIMIT 1 ";
+
+
+    connection.query(query, (err, result) => {
+        var tempid=parseInt(result[0].id.split("-")[1])
+        tempid=tempid+1;
+            if(tempid<9){
+                res.send ("E-00"+tempid);
+            }else if(tempid<99){
+                res.send ("E-0"+tempid);
+            }else{
+                res.send ("E-"+tempid);
+            }
     })
 })
 // Get Using ID

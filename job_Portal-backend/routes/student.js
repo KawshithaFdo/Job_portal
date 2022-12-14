@@ -69,11 +69,15 @@ router.put('/', (req, res) => {
     const gender = req.body.gender
     const email = req.body.email
     const univercity = req.body.univercity
+    const password = req.body.password
+    const skills = req.body.skills
+    const st_id = req.body.st_id
 
 
-    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, contact=?, gender=?, email=?, univercity=? WHERE nic=?";
 
-    connection.query(query, [student_name,location,dateofbirth,contact,gender,email,univercity,nic], (err, result) => {
+    var query = "UPDATE Student SET student_name=?, location=?, dateofbirth=?, nic=?, contact=?, gender=?, email=?, univercity=?, skills=?, password=? WHERE st_id=?";
+
+    connection.query(query, [student_name,location,dateofbirth,nic,contact,gender,email,univercity,skills,password,st_id], (err, result) => {
         if (err) console.log(err);
 
         if (result.affectedRows > 0) {
@@ -139,6 +143,29 @@ router.get('/:st_id', (req, res) => {
             res.sendStatus(400);
         }else{
             res.json(result);
+        }
+    })
+})
+
+// Generate ID
+router.get('/:id/:password/:nic', (req, res) => {
+    const id = req.params.id;
+    const password = req.params.password;
+
+    // console.log(st_id,password);
+
+    var query = "SELECT * FROM student ORDER BY st_id  DESC LIMIT 1 ";
+
+
+    connection.query(query, (err, result) => {
+        var tempid=parseInt(result[0].id.split("-")[1])
+        tempid=tempid+1;
+        if(tempid<9){
+            res.send ("S-00"+tempid);
+        }else if(tempid<99){
+            res.send ("S-0"+tempid);
+        }else{
+            res.send ("S-"+tempid);
         }
     })
 })
