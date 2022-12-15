@@ -158,7 +158,7 @@ router.get('/:id/:password/:nic', (req, res) => {
 
 
     connection.query(query, (err, result) => {
-        var tempid=parseInt(result[0].id.split("-")[1])
+        var tempid=parseInt(result[0].st_id.split("-")[1])
         tempid=tempid+1;
         if(tempid<9){
             res.send ("S-00"+tempid);
