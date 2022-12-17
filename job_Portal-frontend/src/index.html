@@ -10,7 +10,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">-->
 </head>
 <body>
 <!--Home page-->
@@ -19,17 +18,17 @@
         <div>
             <img class="img" src="assets/logo.png" alt="">
         </div>
-
         <div class="navbtn_div">
-            <button id="navlog" class="navbtn_1">LOGIN</button>
-            <button id="navsign" class="navbtn_2">SIGN UP</button>
+            <button id="navlog" class="btn btn-light" style="background-color: #ffcccc;">Login </button>
+            <button id="navsign" class="btn btn-light" style="background-color: #ffcccc;">Sign Up </button>
+            <button id="aboutus" class="btn btn-light" style="background-color: #ffcccc;">About Us </button>
         </div>
     </section>
     <div id="content">
             <div id="hometxt">
                 <h1><i>WELCOME TO COMFY JOBS.</i></h1><br>
-                <h2>we provide you the </h2>
-                <h2>best secure services.</h2>
+                <h1 style="font-size: 45px">Your <mark style="color: aqua;background-color:#fff3db;">Dream Job</mark> is just a <br>search away!</h1>
+                <h2 style="position: relative;top: 60px">We know finding a job is tough,<br>but ComfyJobs makes it easier than ever </h2>
             </div>
         <div>
             <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
@@ -83,13 +82,14 @@
 <section id="newstacc" class="newAcc row">
     <nav class="navbar row">
         <div>
-            <img class="logo" style="margin-top: -8px;margin-left: -32px;" src="assets/logo.png" alt="">
+            <button id="btnimg" style="background-color: #ffcccc;border: #ffcccc"><img class="logo" style="margin-top: -8px;margin-left: -32px;" src="assets/logo.png" alt=""></button>
         </div>
         <div class="navbar_text">
             <h2 class="nav_text">Make Your Own Money</h2>
         </div>
     </nav>
     <div class="col-6 pt-5 ml-1 col1">
+        <h1 class="h1sign">Student Sign-In</h1>
         <div class="mb-3">
             <label class="form-label" for="txtstid">ST_ID :</label>
             <input class="form-control w-50" id="txtstid" placeholder="St_ID" type="text">
@@ -146,13 +146,14 @@
 <section id="newempacc" class="newAcc row">
     <nav class="navbar row">
         <div>
-            <img class="logo" style="margin-top: -8px;margin-left: -32px;" src="assets/logo.png" alt="">
+            <button id="btnimg2" style="background-color: #ffcccc;border: #ffcccc"><img class="logo" style="margin-top: -8px;margin-left: -32px;" src="assets/logo.png" alt=""></button>
         </div>
         <div class="navbar_text">
             <h2 class="nav_text">Make Your Own Money</h2>
         </div>
     </nav>
     <div class="col-6 pt-5 ml-1 col1">
+        <h1 class="h1sign">Employee Sign-In</h1>
         <div class="mb-3">
             <label class="form-label" for="txtempid">ID :</label>
             <input class="form-control w-50" id="txtempid" placeholder="ID" type="text">
@@ -173,12 +174,12 @@
             <label class="form-label" for="txtempcontact">CONTACT :</label>
             <input class="form-control w-50" id="txtempcontact" placeholder="Contact" type="text">
         </div>
+    </div>
+    <div class="col-6 pt-5 col1">
         <div class="mb-3">
             <label class="form-label" for="txtempaddress">ADDRESS :</label>
             <input class="form-control w-50" id="txtempaddress" placeholder="Address" type="text">
         </div>
-    </div>
-    <div class="col-6 pt-5 col1">
         <div class="mb-3">
             <label class="form-label" for="txtemppassion">POSITION :</label>
             <input class="form-control w-50" id="txtemppassion" placeholder="Position" type="text">
@@ -217,7 +218,7 @@
 <section id="logeddashboard" class="newAcc row">
     <div class="row">
         <div class="margin">
-            <h1>PLEASE SELECT AN OPTION BELOW</h1>
+            <h2>Employer Portal</h2>
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="addajob" style="width: 240px">ADD A JOB</button>
@@ -244,7 +245,7 @@
 <section id="logeddashboardst" class="newAcc row">
     <div class="row">
         <div class="margin">
-            <h1>PLEASE SELECT AN OPTION BELOW</h1>
+            <h2>Student Portal</h2>
         </div>
         <div class="empdiv">
             <button class="empbtn row" id="findajob" style="width: 240px">APPLY A JOB</button>
@@ -256,6 +257,7 @@
 <!--Add a Job-->
 <section id="addjob" class="newAcc row">
     <div class="col-6 pt-5 col1">
+        <h1>Add a Job</h1>
         <div class="mb-2">
             <label class="form-label" for="txtcompanyname">COMPANY NAME :</label>
             <input class="form-control w-50" id="txtcompanyname" placeholder="Company name" type="text">
@@ -316,6 +318,7 @@
 <section id="updatedeletejobmain" class="newAcc row">
     <section>
         <div class="col-6 tbldiv">
+            <h2>Remove Jobs</h2>
             <table class="table  table-hover tbl">
                 <tbody id="tbljobs">
                 <!--<tr class="bg-info">
@@ -331,6 +334,7 @@
 <!--Filter job-->
 <section id="filterjob" class="newAcc row">
     <section>
+        <h1>Apply a Job</h1>
       <!--  <div class="col1 filterjob">
             <h1>FILTER BY</h1>
             <div class="col mb-12">
@@ -365,7 +369,7 @@
 <!--Qr-->
 <section id="qr" class="newAcc row">
     <section>
-        <button id="btnhome" style="position: relative;top: 20px;" type="button" class="btn btn-secondary W-25" >MAINMENU</button>
+        <button id="btnhome" style="position: relative;top: 20px;" type="button" class="btn btn-secondary W-25" >MAIN MENU</button>
         <div class="margin" style="top: 40px;">
             <h2>You are successfully create account.</h2>
             <h2>Here is your Qr code</h2>
@@ -376,25 +380,24 @@
                 <!-- Get a Placeholder image initially,
                 this will change according to the
                 data entered later -->
+                <a class="download" href="" download="image.png" title="image" target="_blank">
                     <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
-                         class="qr-code img-thumbnail img-responsive" />
+                         class="qr-code img-thumbnail img-responsive" alt="image"/>
+                </a>
+
 
             </div>
 
 
 
         </div>
-        <!--<div>
-            <div class="mb-3">
-                <button id="btndownqr" type="button" class="btn btn-primary downqrbtn" >Download</button>
-            </div>
-        </div>-->
 
     </section>
 </section>
 <!--Give Feedback-->
 <section id="feedback" class="newAcc row">
     <section class="feedback">
+        <h2>Employer Feedbacks</h2>
         <div class=" mb-3">
             <label class="form-label" style="font-weight: bold;font-size: 25px" for="txtfeedbackstid">Student ID :</label>
             <input class="form-control w-50" id="txtfeedbackstid" placeholder="Student ID" type="text">
@@ -455,7 +458,7 @@
 </section>
 <!--Password Change student-->
 <section id="changepassword" class="newAcc row">
-    <h1 style="position: relative;left: 30%;width: 800px">Student Details</h1>
+    <h1 style="position: relative;left: 30%;width: 800px">Change Password</h1>
     <div class="col-6 pt-5 col1 qrdata">
 
         <div class="mb-2">
@@ -481,7 +484,7 @@
 </section>
 <!--Password Change employee-->
 <section id="changeemployeepassword" class="newAcc row">
-    <h1 style="position: relative;left: 30%;width: 800px">Employee Details</h1>
+    <h1 style="position: relative;left: 30%;width: 800px">Change Password</h1>
     <div class="col-6 pt-5 col1 qrdata">
 
         <div class="mb-2">
@@ -508,6 +511,7 @@
 <!--Emp Acc-->
 <section id="empacc" class="newAcc row">
     <section class="row empaccsec">
+        <h1>Employer Details</h1>
         <div class="col-4 pt-5 ml-1 col1">
             <div class="mb-3">
                 <label class="form-label" for="txtempname">NAME :</label>
@@ -569,6 +573,7 @@
 <!--Student Acc-->
 <section id="stfeedback" class="newAcc row">
     <section class="row empaccsec">
+        <h1>Student Details</h1>
         <div class="col-4 pt-5 ml-1 col1">
             <div class="mb-3">
                 <label class="form-label" for="txtstname">NAME :</label>
@@ -737,6 +742,7 @@
             // Replace the src of the image with
             // the QR code image
             $('.qr-code').attr('src', finalURL);
+            $('.download').attr('href', finalURL);
 
         });
     });
@@ -749,6 +755,12 @@
         $("#dashboard").css("display", "none");
         $("#nav").css("display", "block");
         $("#login").css("display", "flex");
+    });
+    $("#btnimg").click(function () {
+        logout();
+    });
+    $("#btnimg2").click(function () {
+        logout();
     });
     $("#navsign").click(function () {
         $("#login").css("display", "none");
@@ -1600,6 +1612,11 @@
         $("#changeemployeepassword").css("display", "none");
         $("#logeddashboardst").css("display", "none");
         $("#logedstnav").css("display", "none");
+        $("#txtloginPassword").css('border', 'none');
+        $("#txtloginUserid").css('border', 'none');
+        $("#loginbtn").attr('disabled', true);
+        $("#loginempbtn").attr('disabled', true);
+        $("#loginadminbtn").attr('disabled', true);
     }
     function error(){
         $("#alert").css("display","block");
@@ -1702,8 +1719,6 @@
         $("#logeddashboardst").css("display", "none");
         $("#logedstnav").css("display", "none");
     }
-
-
 </script>
 </body>
 </html>

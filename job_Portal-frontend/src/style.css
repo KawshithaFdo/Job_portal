@@ -10,8 +10,11 @@
 }
 .navbtn_div{
     position: absolute;
-    left: 100vh;
+    left: 135vh;
     bottom: 2vh;
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
 }
 .navbtn_1{
     background-color: #273c75;
@@ -38,14 +41,15 @@
 }
 #img_2{
     position: relative;
-    left: 85vh;
-    height: 50vh;
+    left: 93vh;
+    height: 46vh;
+    bottom: 200px;
 }
 #hometxt{
     position: relative;
-    top: 192px;
+    top: 100px;
     font-size: 30px;
-    margin-left: 160px;
+    margin-left: 90px;
 }
 /*login*/
 .button {
@@ -144,7 +148,7 @@ input[type=text], input[type=password] {
     width: 50vw;
     height: 10vh;
     position: relative;
-    left: 349px;
+    left: 370px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -245,7 +249,12 @@ input[type=text], input[type=password] {
 }
 .empacc{
     position: relative;
-    top: 45px;
-    left: 200px;
+    left: 350px;
+    bottom: 420px;
+}
+.h1sign{
+    position: relative;
+    bottom: 65px;
+    font-family: initial;
 }
 
