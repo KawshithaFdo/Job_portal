@@ -1,3 +1,4 @@
+
 .nav{
     position: relative;
     height: 10vh;
@@ -33,11 +34,31 @@
     color: white;
     font-size: 19.2px;
 }
-#content{
-    position: absolute;
-    height: 89vh;
+.rowh1{
+    position: relative;
+    top: 140px;
+    left: 200px;
+}
+.vision{
+    position: relative;
+    font-size: 30px;
+    height: 50px;
+    top: 300px;
+    right: 73vw;
+}
+.content{
+    position: relative;
+    height: 87vh;
     width: 97vw;
     background-color: #fff3db;
+}
+.cont{
+    position: relative;
+    height: 95vh;
+    width: 97vw;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 #img_2{
     position: relative;
@@ -257,4 +278,9 @@ input[type=text], input[type=password] {
     bottom: 65px;
     font-family: initial;
 }
+.aboutus{
+    height: 300px;
+    /*margin-left: 50px;*/
+}
+
 

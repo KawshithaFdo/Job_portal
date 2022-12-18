@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />-->
 </head>
 <body>
 <!--Home page-->
-<section id="dashboard" class="container-fluid">
+<section id="dashboard" class="newAcc row">
     <section class="nav">
         <div>
             <img class="img" src="assets/logo.png" alt="">
@@ -21,20 +21,40 @@
         <div class="navbtn_div">
             <button id="navlog" class="btn btn-light" style="background-color: #ffcccc;">Login </button>
             <button id="navsign" class="btn btn-light" style="background-color: #ffcccc;">Sign Up </button>
-            <button id="aboutus" class="btn btn-light" style="background-color: #ffcccc;">About Us </button>
+            <a id="aboutus" href="#updatejob" class="btn btn-light" style="background-color: #ffcccc;">About Us </a>
         </div>
     </section>
-    <div id="content">
+    <div id="content" class="content">
             <div id="hometxt">
                 <h1><i>WELCOME TO COMFY JOBS.</i></h1><br>
                 <h1 style="font-size: 45px">Your <mark style="color: aqua;background-color:#fff3db;">Dream Job</mark> is just a <br>search away!</h1>
                 <h2 style="position: relative;top: 60px">We know finding a job is tough,<br>but ComfyJobs makes it easier than ever </h2>
             </div>
-        <div>
-            <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
-        </div>
+            <div>
+                <img id="img_2" src="assets/ILLUSTRATION-T4SU-1-1024x576.png" alt="">
+            </div>
     </div>
 </section>
+<!--About Us-->
+<div class="cont container-fluid" id="updatejob">
+    <div class="row-1 aboutus" style="height: 150px">
+        <h1 style="color: #bb2d3b;font-size: 30px;margin-left: 500px">About Us</h1>
+        <p style="top: 200px;width: 80vw;font-size: 19px;margin-top: 10px">Founded by an insightful entrepreneur, comfy jobs aims to transform the world of recruitment through
+            cutting-edge Programmatic Job Advertising solution, helping recruiters find the best talent and job seekers the right
+            opportunities available through one single global platform. </p>
+    </div>
+    <div class="row-2 aboutus" >
+        <h1 style="font-size: 30px;margin-left: 40px">VISION</h1>
+        <p style="top: 200px;width: 80vw;font-size: 19px;margin-top: 50px">To transform the world of recruitment through powerful Programmatic technology solution.</p>
+        <img src="assets/vision.svg" alt="" style="position: relative;margin-left: 300px;width: 100px">
+    </div>
+    <div class="row-3 aboutus" >
+        <h1 style="font-size: 30px;margin-left: 40px">MISSION</h1>
+        <p style="top: 200px;width: 80vw;font-size: 19px;margin-top: 50px">To help employers find their ideal candidates and job seekers the suitable opportunities they are looking for.</p>
+        <img src="assets/mission.svg" alt="" style="position: relative;margin-left: 300px;width: 100px">
+    </div>
+
+</div>
 <!--Main Navigation-->
 <nav id="nav" class="navbar">
     <div>
@@ -648,55 +668,7 @@
         </div>
     </div>
 </div>
-<!--Update Job-->
-<div class="modal fade" id="updatejob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="job" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-<!--                <h5 class="modal-title text-danger" id="updatejob">Administrater Log In</h5>-->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h4>COMPANY NAME</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatecompanyname" class="form-control" type="text">
-                </div>
-                <h4>JOB TITLE</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejobtitle" class="form-control" type="text">
-                </div>
-                <h4>LOCATION</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejoblocation" class="form-control" type="text">
-                </div>
-                <h4>JOB TIME</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejobtime" class="form-control" type="text">
-                </div>
-                <h4>SALARY RATE</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejobsalary" class="form-control" type="text">
-                </div>
-                <h4>REQUIRED GENDER</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejobgender" class="form-control" type="text">
-                </div>
-                <h4>REQUIRED SKILLS</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdatejobskills" class="form-control" type="text">
-                </div>
-                <h4>ABOUT JOB</h4>
-                <div class="d-flex mt-4 mb-4">
-                    <input id="txtupdateaboutjob" class="form-control" type="text">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="btnupdatejob" type="button" class="btn btn-primary btncreate" data-bs-dismiss="modal" style="bottom: 9px; right: 240px;">UPDATE</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--Confirm Apply Job-->
 <div class="modal fade" id="applyjob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="apply" aria-hidden="true">
@@ -709,6 +681,45 @@
             <div class="modal-footer">
                 <button id="btncancelapply" type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">CANCEL</button>
                 <button id="btnconfirmapply" type="button" class="btn btn-success" data-bs-dismiss="modal">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Students in Employer jobs-->
+<div class="modal fade" id="stu_jobs" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="driverl" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="driverl">Student Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--Table-->
+                <section class="row p-3 mb-5">
+                    <div class="col">
+                        <table class="table">
+                            <thead class="bg-info">
+                            <tr>
+                                <th scope="col">STUDENT NAME</th>
+                                <th scope="col">CONTACT</th>
+                                <th scope="col">GENDER </th>
+                                <th scope="col">SKILLS</th>
+                            </tr>
+                            </thead>
+                            <tbody id="st_jobdetails">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
             </div>
         </div>
     </div>
@@ -754,6 +765,7 @@
     $("#navlog").click(function () {
         $("#dashboard").css("display", "none");
         $("#nav").css("display", "block");
+        $("#updatejob").css("display", "none");
         $("#login").css("display", "flex");
     });
     $("#btnimg").click(function () {
@@ -765,6 +777,7 @@
     $("#navsign").click(function () {
         $("#login").css("display", "none");
         $("#dashboard").css("display", "none");
+        $("#updatejob").css("display", "none");
         $("#newstacc").css("display", "flex");
 
         $.ajax({
@@ -1118,6 +1131,7 @@
             }
         });
     });
+    var jobid;
     $("#navempacc").click(function () {
         /*Emp Acc*/
         $.ajax({
@@ -1142,8 +1156,15 @@
                         $("#tblempacc tr").remove();//clean table old values
                         for (const id of res) {
                             //Add a Row to table
-                            let row = `<tr><td>${id.job_title}</td></tr>`;
+                            let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
+    <td><button class="text-white bg-primary" id="btnseemore" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#stu_jobs">SEE MORE</button></td></tr>`;
                             $("#tblempacc").append(row);
+
+                            $("#tblempacc>tr").click(function () {
+                                 jobid = $(this).children().eq(0).text();
+                                 setData();
+                            });
+
 
                         }
                     },
@@ -1160,6 +1181,7 @@
 
         empAcc();
     });
+
     $("#btnupdateempacc").click(function () {
         /*Update Emp*/
         $.ajax({
@@ -1600,7 +1622,7 @@
         $("#addjob").css("display", "none");
         $("#congrades").css("display", "none");
         $("#updatedeletejobmain").css("display", "none");
-        $("#updatejob").css("display", "none");
+        $("#updatejob").css("display", "flex");
         $("#filterjob").css("display", "none");
         $("#qr").css("display", "none");
         $("#feedback").css("display", "none");
@@ -1718,6 +1740,40 @@
         $("#changeemployeepassword").css("display", "none");
         $("#logeddashboardst").css("display", "none");
         $("#logedstnav").css("display", "none");
+    }
+
+    function setData() {
+        $.ajax({
+            url: "http://localhost:5000/st_job/"+jobid+"/E-xxx",
+            method: "GET",
+            contentType: "application/json",
+            success: function (res) {
+                var id;
+                for (var i in res){
+                    id=res[i].st_id;
+                    $.ajax({
+                        url: "http://localhost:5000/student/"+id,
+                        method: "GET",
+                        success: function (res) {
+                            console.log(res)
+                            for (const id of res) {
+                                //Add a Row to table
+
+                                let row = `<tr><td>${id.student_name}</td><td>${id.contact}</td><td>${id.gender}</td><td>${id.skills}</td></tr>`;
+                                $("#st_jobdetails").append(row);
+                            }
+                        },
+                        error: function (ob) {
+                            error();
+                        }
+                    });
+                }
+
+            },
+            error: function (ob, errorStus) {
+                error();
+            }
+        });
     }
 </script>
 </body>

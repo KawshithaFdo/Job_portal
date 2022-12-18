@@ -84,4 +84,20 @@ router.get('/:st_id', (req, res) => {
     })
 })
 
+// Get Using ID
+router.get('/:job_id/:id', (req, res) => {
+    const job_id = req.params.job_id
+
+    var query = "SELECT * from St_jobs WHERE job_id=? ";
+
+    connection.query(query, ["J-001"], (err, result) => {
+        if (result.length!=0){
+            console.log(result)
+            res.send(result);
+        }else{
+            res.sendStatus(400);
+        }
+    })
+})
+
 module.exports = router
