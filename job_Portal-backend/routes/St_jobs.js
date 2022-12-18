@@ -90,7 +90,7 @@ router.get('/:job_id/:id', (req, res) => {
 
     var query = "SELECT * from St_jobs WHERE job_id=? ";
 
-    connection.query(query, ["J-001"], (err, result) => {
+    connection.query(query, [job_id], (err, result) => {
         if (result.length!=0){
             console.log(result)
             res.send(result);

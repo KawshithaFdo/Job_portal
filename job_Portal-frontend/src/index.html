@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />-->
 </head>
 <body>
 <!--Home page-->
@@ -668,7 +668,6 @@
         </div>
     </div>
 </div>
-
 <!--Confirm Apply Job-->
 <div class="modal fade" id="applyjob" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="apply" aria-hidden="true">
@@ -685,8 +684,6 @@
         </div>
     </div>
 </div>
-
-
 <!--Students in Employer jobs-->
 <div class="modal fade" id="stu_jobs" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="driverl" aria-hidden="true">
@@ -1153,20 +1150,20 @@
                     url: "http://localhost:5000/job/"+logedemp_Id,
                     method: "GET",
                     success: function (res) {
-                        $("#tblempacc tr").remove();//clean table old values
-                        for (const id of res) {
-                            //Add a Row to table
-                            let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
+                            $("#tblempacc tr").remove();//clean table old values
+                            for (const id of res) {
+                                //Add a Row to table
+                                let row = `<tr><td>${id.job_id}</td><td>${id.job_title}</td>
     <td><button class="text-white bg-primary" id="btnseemore" style="border-radius: 15px;width:112px" data-bs-toggle="modal" data-bs-target="#stu_jobs">SEE MORE</button></td></tr>`;
-                            $("#tblempacc").append(row);
-
+                                $("#tblempacc").append(row);
+                            }
                             $("#tblempacc>tr").click(function () {
-                                 jobid = $(this).children().eq(0).text();
-                                 setData();
+                                jobid = $(this).children().eq(0).text();
+                                $("#st_jobdetails tr").remove();
+                                setData();
                             });
 
 
-                        }
                     },
                     error: function (ob) {
                         error();
@@ -1755,7 +1752,6 @@
                         url: "http://localhost:5000/student/"+id,
                         method: "GET",
                         success: function (res) {
-                            console.log(res)
                             for (const id of res) {
                                 //Add a Row to table
 
@@ -1763,7 +1759,7 @@
                                 $("#st_jobdetails").append(row);
                             }
                         },
-                        error: function (ob) {
+                        error: function (ob,status) {
                             error();
                         }
                     });
