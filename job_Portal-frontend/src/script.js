@@ -1,3 +1,4 @@
+/*Validations*/
 const UserPasswordRegEx =/^[A-z0-9]{4,}$/;
 const UserNameRegEx =/^[A]?[S]?[E]?[-][0-9]{3,}$/;
 const JobIDRegEx =/^[J][-][0-9]{3,}$/;
@@ -684,7 +685,7 @@ function Validfeedback() {
     $("#txtfeedbackstid").css('border', '2px solid green');
     if (UserNameRegEx.test(username)) {
         var userpassword = $("#txtfeedback").val();
-        var resp = UserPasswordRegEx.test(userpassword);
+        var resp = AddressRegEx.test(userpassword);
         if (resp) {
             $("#txtfeedback").css('border', '2px solid green');
             return true;
@@ -702,7 +703,7 @@ function checkfeedback() {
     if (UserNameRegEx.test(username)) {
         $("#txtfeedback").focus();
         var userpassword = $("#txtfeedback").val();
-        if (UserPasswordRegEx.test(userpassword)) {
+        if (AddressRegEx.test(userpassword)) {
             $("#btnfeedback").focus();
         } else {
             $("#txtfeedback").focus();
